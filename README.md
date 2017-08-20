@@ -7,3 +7,21 @@ By the end of the production period, this app will, at a minimum, satisfy the fo
 
 * Hosting on Heroku
 * New user account creation, login, and demo login
+* Browsing and searching other users by location and 'looking for' data
+* Personality questions
+* Match percentages based on question answers
+
+# Design Docs
+
+* View Wireframes
+* React Components
+* API Endpoints
+* DB Schema
+* Sample State
+
+# Implementation Timeline
+
+## Phase 1: Backend setup and Frontend User Authentication (2 days)
+* **Objective:** Functioning rails project with frontend authentication
+
+## Phase 2: 
