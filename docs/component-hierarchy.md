@@ -43,5 +43,11 @@
 
 | **Path**  | **Component** |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| '/'  | 'Homepage'  |
+| '/sign-up'  | 'AuthFormContainer'  |
+| '/sign-in'  | 'AuthFormContainer'  |
+| '/users'  | 'UserIndex'  |
+| '/user/:userId'  | 'UserDetailContainer'  |
+| '/messages'  | 'MessageIndex'  |
+| '/message/:messageId'  | 'MessageDetailContainer'  |
+| '/questions'  | 'QuestionIndexContainer'  |
