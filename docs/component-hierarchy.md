@@ -38,3 +38,10 @@
 
 **QuestionIndex**
 * QuestionIndexItem
+
+# Routes
+
+| **Path**  | **Component** |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
