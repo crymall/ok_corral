@@ -1,24 +1,9 @@
-# README
+# OKCorral
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Minimum Viable Product
 
-Things you may want to cover:
+OKCorral is a Western-themed clone of OKCupid, built using Ruby on Rails and React/Redux.
+By the end of the production period, this app will, at a minimum, satisfy the following criteria:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Hosting on Heroku
+* New user account creation, login, and demo login
