@@ -47,7 +47,7 @@
 | '/sign-up'  | 'AuthFormContainer'  |
 | '/sign-in'  | 'AuthFormContainer'  |
 | '/users'  | 'UserIndex'  |
-| '/user/:userId'  | 'UserDetailContainer'  |
+| '/users/:userId'  | 'UserDetailContainer'  |
 | '/messages'  | 'MessageIndex'  |
-| '/message/:messageId'  | 'MessageDetailContainer'  |
+| '/messages/:messageId'  | 'MessageDetailContainer'  |
 | '/questions'  | 'QuestionIndexContainer'  |
