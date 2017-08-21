@@ -29,7 +29,7 @@
     answer_two_txt: "a bandit",
     answer_three_txt: "a sheriff",
     answer_four_txt: "a breath mint"
-  }
+  },
   answers: {
     id: 1,
     answer_num: 3,
