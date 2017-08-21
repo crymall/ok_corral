@@ -26,15 +26,19 @@
 * `DELETE /api/session`
   * Deletes session on user logout
 
+### Threads
+* `POST /api/threads`
+  * Creates new message thread between two users
+* `GET /api/threads`
+  * Threads index
+* `GET /api/threads/:thread_id`
+  * Fetches specific message thread
+
 ### Messages
-* `GET /api/messages`
-  * Messages index
-* `POST /api/messages`
-  * Creates new message thread
-* `GET /api/messages/:messageId`
-  * Fetches existing message thread
-* `PATCH /api/messages/:messageId`
-  * Updates message thread with new reply
+* `GET /api/threads/:thread_id/messages`
+  * Messages index for thread
+* `POST /api/threads/:thread_id/messages`
+  * Creates new message in thread
 
 ### Questions
 * `GET /api/questions`
