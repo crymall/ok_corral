@@ -16,20 +16,23 @@
 * UserDetail
 * NavBar
 
-**MessageIndexContainer**
-* MessageIndex
+**ThreadIndexContainer**
+* ThreadIndex
 * NavBar
+
+**ThreadIndex**
+* ThreadIndexItem
+
+**ThreadDetailContainer**
+* ThreadDetail
+* NavBar
+
+**ThreadDetail**
+* MessageIndex
+* MessageSubmitForm
 
 **MessageIndex**
 * MessageIndexItem
-
-**MessageDetailContainer**
-* MessageDetail
-* NavBar
-
-**MessageDetail**
-* MessageDetailItem
-* MessageSubmitForm
 
 **QuestionIndexContainer**
 * QuestionIndex
@@ -48,6 +51,6 @@
 | '/sign-in'  | 'AuthFormContainer'  |
 | '/users'  | 'UserIndex'  |
 | '/users/:userId'  | 'UserDetailContainer'  |
-| '/messages'  | 'MessageIndex'  |
-| '/messages/:messageId'  | 'MessageDetailContainer'  |
+| '/threads'  | 'ThreadIndex'  |
+| '/messages/:threadId'  | 'ThreadDetailContainer'  |
 | '/questions'  | 'QuestionIndexContainer'  |
