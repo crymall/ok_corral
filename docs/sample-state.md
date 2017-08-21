@@ -1,5 +1,6 @@
 # Sample State
 
+```js
 {
   currentUser: {
     id: 1,
@@ -30,3 +31,4 @@
     user_id: 1
   }
 }
+```
