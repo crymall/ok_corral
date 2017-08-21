@@ -8,6 +8,7 @@ username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 zip             | integer   | not null
+age             | integer   | not null
 gender          | string    | not null
 orientation     | string    | not null
 summary         | text      |
