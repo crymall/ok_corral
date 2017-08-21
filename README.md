@@ -1,5 +1,7 @@
 # OKCorral
 
+[Trello][https://trello.com/b/lJYufajq/okcorral]
+
 # Minimum Viable Product
 
 OKCorral is a Western-themed clone of OKCupid, built using Ruby on Rails and React/Redux.
@@ -13,11 +15,11 @@ By the end of the production period, this app will, at a minimum, satisfy the fo
 
 # Design Docs
 
-* View Wireframes
-* React Components
-* API Endpoints
-* DB Schema
-* Sample State
+* [View Wireframes][docs/wireframes]
+* [React Components][docs/component-hierarchy.md]
+* [API Endpoints][docs/api-endpoints.md]
+* [DB Schema][docs/schema.md]
+* [Sample State][docs/sample-state.md]
 
 # Implementation Timeline
 
@@ -35,3 +37,9 @@ By the end of the production period, this app will, at a minimum, satisfy the fo
 
 ## Phase 6: Advanced Search/Pagination for Users Index (1 day)
 * **Objective:** Add pagination/infinite scroll to users index. Add search by more parameters (username, summary, etc.).
+
+## Bonus Features (TBD)
+* User can block other users.
+* Implementation of OKCupids "DoubleTake" feature.
+* Messages can be searched/sorted.
+* Advanced User attributes (astrological sign, smoker, pets, etc.).
