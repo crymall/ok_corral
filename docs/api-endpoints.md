@@ -20,6 +20,12 @@
 * `PATCH /api/users/:userId`
   * Allows user to update their profile
 
+### Session
+* `POST /api/session`
+  * Creates new session on user login
+* `DELETE /api/session`
+  * Deletes session on user logout
+
 ### Messages
 * `GET /api/messages`
   * Messages index
@@ -41,6 +47,6 @@
 * `POST /api/answer`
   * User answers a specific question
 * `GET /api/answers`
-  * Answers are fetched for user compatibility 
+  * Answers are fetched for user compatibility
 * `PATCH /api/answers/:answerId`
   * User can change their answers
