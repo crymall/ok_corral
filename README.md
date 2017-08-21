@@ -43,7 +43,7 @@ By the end of the production period, this app will, at a minimum, satisfy the fo
 ## Phase 4: Threads and Messaging (2 days)
 * **Objective:** Threads can be created, indexed, and replied to through messages.
 
-## Phase 6: Advanced Search/Pagination for Users Index (1 day)
+## Phase 5: Advanced Search/Pagination for Users Index (1 day)
 * **Objective:** Add pagination/infinite scroll to users index. Add search by more parameters (username, summary, etc.).
 
 ## Bonus Features (TBD)
