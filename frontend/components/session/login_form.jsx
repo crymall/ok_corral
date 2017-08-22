@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginFormContainer from './login_form_container';
 
 class LoginForm extends React.Component {
 
@@ -77,4 +76,4 @@ class LoginForm extends React.Component {
 
 }
 
-export default LoginForm
+export default LoginForm;

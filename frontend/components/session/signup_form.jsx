@@ -1,5 +1,4 @@
 import React from 'react';
-import SignupFormContainer from './login_form_container';
 
 class SignupForm extends React.Component {
 
@@ -26,7 +25,7 @@ class SignupForm extends React.Component {
   }
 
   componentDidMount() {
-    this.clearErrors();
+    this.props.clearErrors();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,7 +50,7 @@ class SignupForm extends React.Component {
 
   incrementIndex() {
     return e => this.setState({
-      index: (this.state.ind + 1)
+      ind: (this.state.ind + 1)
     })
   }
 
@@ -76,72 +75,79 @@ class SignupForm extends React.Component {
   render() {
 
     const page1 = (
-      <div>
-        { renderErrors }
-        <form onSubmit={this.incrementIndex}>
-          I'm a <select>
-                  <option value='straight'>Straight</option>
-                  <option value='gay'>Gay</option>
-                  <option value='bisexual'>Queer/Bisexual</option>
-                </select>
-                <select>
-                  <option value='woman'>Man</option>
-                  <option value='man'>Woman</option>
-                  <option value='more'>Nonbinary Individual</option>
-                </select>
-          <input type='submit' value='Continue' />
-        </form>
-      </div>
-    )
+      <form onSubmit={this.incrementIndex}>
+        I'm a <select name='user' onChange={this.handleInput('orientation')}>
+                <option value='straight'>Straight</option>
+                <option value='gay'>Gay</option>
+                <option value='bisexual'>Queer/Bisexual</option>
+              </select>
+              <select name='user' onChange={this.handleInput('gender')}>
+                <option value='woman'>Woman</option>
+                <option value='man'>Man</option>
+                <option value='more'>Nonbinary Individual</option>
+              </select>
+        <input type='submit' value='Continue' />
+      </form>
+    );
 
     const page2 = (
-      <div>
-        { renderErrors }
-        <form onSubmit={this.incrementIndex}>
-          <label>
-            Username
-            <input name='user' onChange={this.handleInput('username')} value={`${this.state.user.username}`} />
-          </label>
-          <label>
-            Email Address
-            <input name='user' onChange={this.handleInput('email')} value={`${this.state.user.email}`} />
-          </label>
-          <label>
-            Password
-            <input name='user' type='password' onChange={this.handleInput('password')} value={`${this.state.user.password}`} />
-          </label>
-          <input type='submit' value='Continue' />
-        </form>
-      </div>
-    )
+      <form onSubmit={this.incrementIndex}>
+        <label>
+          Username
+          <input name='user' onChange={this.handleInput('username')} value={`${this.state.user.username}`} />
+        </label>
+        <label>
+          Email Address
+          <input name='user' onChange={this.handleInput('email')} value={`${this.state.user.email}`} />
+        </label>
+        <label>
+          Password
+          <input name='user' type='password' onChange={this.handleInput('password')} value={`${this.state.user.password}`} />
+        </label>
+        <input type='submit' value='Continue' />
+      </form>
+    );
 
     const page3 = (
-      <div>
-        { renderErrors }
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Zip Code
-            <input name='user' onChange={this.handleInput('zip')} value={`${this.state.user.zip}`} />
-          </label>
-          <label>
-            Age
-            <input name='user' onChange={this.handleInput('age')} value={`${this.state.user.age}`} />
-          </label>
-          <input type='submit' value='Sign Up' />
-        </form>
-      </div>
-    )
-
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Zip Code
+          <input name='user' onChange={this.handleInput('zip')} value={`${this.state.user.zip}`} />
+        </label>
+        <label>
+          Age
+          <input name='user' onChange={this.handleInput('age')} value={`${this.state.user.age}`} />
+        </label>
+        <input type='submit' value='Sign Up' />
+      </form>
+    );
 
     if (this.state.ind === 1) {
-      return ({ page1 });
+      return (
+        <div>
+          { this.renderErrors() }
+          { page1 }
+        </div>
+      );
     }
     else if (this.state.ind === 2) {
-      return ({ page2 });
+      return (
+        <div>
+          { this.renderErrors() }
+          { page2 }
+        </div>
+      );
     }
     else {
-      return ({ page3 });
+      return (
+        <div>
+          { this.renderErrors() }
+          { page3 }
+        </div>
+      );
     }
   }
 
 }
+
+export default SignupForm;
