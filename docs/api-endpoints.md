@@ -16,7 +16,7 @@
 * `POST /api/users`
   * Creates new user
 * `GET /api/users/:userId`
-  * Fetches single existing user
+  * Fetches single existing user profile
 * `PATCH /api/users/:userId`
   * Allows user to update their profile
 

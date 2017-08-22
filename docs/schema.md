@@ -11,6 +11,14 @@ zip             | integer   | not null
 age             | integer   | not null
 gender          | string    | not null
 orientation     | string    | not null
+
+*user has a profile, many messages, many threads through messages,*
+*many answers*
+
+## profiles
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
 summary         | text      |
 doing_with_life | text      |
 good_at         | text      |
@@ -19,9 +27,9 @@ six_things      | text      |
 thinking_about  | text      |
 fri_night       | text      |
 message_if      | text      |
+user_id         | integer   | not null, foreign key
 
-*user has many messages, many threads through messages,*
-*many answers*
+*profile belongs to a user*
 
 ## threads
 column name     | data type | details
