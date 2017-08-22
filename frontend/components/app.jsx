@@ -1,9 +1,10 @@
 import React from 'react';
 import LoginFormContainer from './session/login_form_container';
+import { Route } from 'react-router';
 
 const App = () => (
   <div>
-    <LoginFormContainer />
+    <Route path='/' component= { LoginFormContainer } />
   </div>
 );
 

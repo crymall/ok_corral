@@ -27,6 +27,7 @@ class LoginForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger;
     e.preventDefault;
     const user = {user: this.state};
     this.props.processForm(user);
@@ -34,7 +35,7 @@ class LoginForm extends React.Component {
 
   handleInput(type) {
     return e => this.setState({
-      [type]: e.currentTarget.value;
+      [type]: e.currentTarget.value
     });
   }
 

@@ -1,10 +1,10 @@
 class User < ApplicationRecord
 
 validates :password, length: { minimum: 7, allow_nil: true}
-vaidates :session_token, :username, :email, :password_digest, :zip,
+validates :session_token, :username, :email, :password_digest, :zip,
   :age, :gender, :orientation, null: false
 
-before_validates :ensure_seesion_token
+before_validation :ensure_session_token
 
 attr_reader :password
 
