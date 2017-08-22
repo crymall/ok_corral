@@ -18,6 +18,11 @@ class SignupForm extends React.Component {
       },
       ind: 1
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.incrementIndex = this.incrementIndex.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -72,7 +77,7 @@ class SignupForm extends React.Component {
 
     const page1 = (
       <div>
-        {renderErrors}
+        { renderErrors }
         <form onSubmit={this.incrementIndex}>
           I'm a <select>
                   <option value='straight'>Straight</option>
@@ -91,7 +96,7 @@ class SignupForm extends React.Component {
 
     const page2 = (
       <div>
-        {renderErrors}
+        { renderErrors }
         <form onSubmit={this.incrementIndex}>
           <label>
             Username
@@ -112,7 +117,7 @@ class SignupForm extends React.Component {
 
     const page3 = (
       <div>
-        {renderErrors}
+        { renderErrors }
         <form onSubmit={this.handleSubmit}>
           <label>
             Zip Code
