@@ -32,6 +32,7 @@ li {
   color: white;
   font-size: 20px;
   width: 65%;
+  min-width: 700px;
 }
 
 .front-head {
@@ -59,6 +60,7 @@ li {
   justify-content: space-between;
   align-items: center;
   width: 65%;
+  min-width: 700px;
   color: white;
 }
 
@@ -101,9 +103,9 @@ button {
 .reg-text-form {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   padding-top: 10px;
-  width: 100%;
+  width: 700px;
 }
 
 label {
@@ -130,8 +132,6 @@ input {
 
 .ageselect {
   height: 46px;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .inputs {
@@ -140,5 +140,5 @@ input {
 }
 
 .textbutton {
-  margin-top: 15px;
+  margin-top: 25px;
 }
