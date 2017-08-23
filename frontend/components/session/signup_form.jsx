@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash/merge';
 
 class SignupForm extends React.Component {
 
@@ -12,8 +13,8 @@ class SignupForm extends React.Component {
         password: '',
         zip: 0,
         age: 0,
-        gender: '',
-        orientation: ''
+        gender: 'woman',
+        orientation: 'straight'
       },
       ind: 1
     }
@@ -35,23 +36,28 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
-    const user = {user: this.state.user};
+    debugger;
+    e.preventDefault();
+    const user = this.state.user;
     this.props.processForm(user);
   }
 
   handleInput(type) {
-    return e => this.setState({
-      user: {
-        [type]: e.currentTarget.value
-      }
-    });
+    const old_state = this.state;
+
+    return e => this.setState(
+      merge({}, old_state, {user: {[type]: e.currentTarget.value}}))
   }
 
-  incrementIndex() {
-    return e => this.setState({
-      ind: (this.state.ind + 1)
-    })
+  incrementIndex(e) {
+    e.preventDefault();
+
+    const old_state = this.state;
+    const next_ind = this.state.ind + 1
+
+    this.setState(
+      merge({}, old_state, {ind: next_ind})
+    );
   }
 
   renderErrors() {
@@ -76,12 +82,12 @@ class SignupForm extends React.Component {
 
     const page1 = (
       <form onSubmit={this.incrementIndex}>
-        I'm a <select name='user' onChange={this.handleInput('orientation')}>
+        I'm a <select name='user' value={this.state.value} onChange={this.handleInput('orientation')}>
                 <option value='straight'>Straight</option>
                 <option value='gay'>Gay</option>
                 <option value='bisexual'>Queer/Bisexual</option>
               </select>
-              <select name='user' onChange={this.handleInput('gender')}>
+              <select name='user' value={this.state.value} onChange={this.handleInput('gender', this)}>
                 <option value='woman'>Woman</option>
                 <option value='man'>Man</option>
                 <option value='more'>Nonbinary Individual</option>
