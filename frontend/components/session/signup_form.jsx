@@ -82,17 +82,25 @@ class SignupForm extends React.Component {
 
     const page1 = (
       <form onSubmit={this.incrementIndex}>
-        I'm a <select name='user' value={this.state.value} onChange={this.handleInput('orientation')}>
-                <option value='straight'>Straight</option>
-                <option value='gay'>Gay</option>
-                <option value='bisexual'>Queer/Bisexual</option>
-              </select>
-              <select name='user' value={this.state.value} onChange={this.handleInput('gender', this)}>
-                <option value='woman'>Woman</option>
-                <option value='man'>Man</option>
-                <option value='more'>Nonbinary Individual</option>
-              </select>
-        <input type='submit' value='Continue' />
+        <p>
+        Welcome to the best meet n&#39; greet this side of the Mississippi.
+        We're pleased to meet you, and pleased to help you find your sweetheart.
+        </p>
+
+        <p>But first, we have to get down to brass tacks.</p>
+
+        <p>You are a...</p>
+        <select name='user' value={this.state.value} onChange={this.handleInput('orientation')}>
+          <option value='straight'>Straight</option>
+          <option value='gay'>Gay</option>
+          <option value='bisexual'>Queer/Bisexual</option>
+        </select>
+        <select name='user' value={this.state.value} onChange={this.handleInput('gender', this)}>
+          <option value='woman'>Woman</option>
+          <option value='man'>Man</option>
+          <option value='more'>Nonbinary Individual</option>
+        </select>
+        <button type='submit' value='submit'>Continue</button>
       </form>
     );
 
@@ -110,7 +118,7 @@ class SignupForm extends React.Component {
           Password
           <input name='user' type='password' onChange={this.handleInput('password')} value={`${this.state.user.password}`} />
         </label>
-        <input type='submit' value='Continue' />
+        <button type='submit' value='submit'>Continue</button>
       </form>
     );
 
@@ -124,31 +132,40 @@ class SignupForm extends React.Component {
           Age
           <input name='user' onChange={this.handleInput('age')} value={`${this.state.user.age}`} />
         </label>
-        <input type='submit' value='Sign Up' />
+        <button type='submit' value='submit'>Sign Up</button>
       </form>
     );
 
     if (this.state.ind === 1) {
       return (
-        <div>
-          { this.renderErrors() }
-          { page1 }
+        <div className="homepage-reg">
+          <div className="homepage-body">
+            <h1 className='front-head'>HOWDY, PARTNER.</h1>
+            { this.renderErrors() }
+            { page1 }
+          </div>
         </div>
       );
     }
     else if (this.state.ind === 2) {
       return (
-        <div>
-          { this.renderErrors() }
-          { page2 }
+        <div className="homepage-reg">
+          <div className="homepage-body">
+            <h1 className='front-head'>ALMOST THERE...</h1>
+            { this.renderErrors() }
+            { page2 }
+          </div>
         </div>
       );
     }
     else {
       return (
-        <div>
-          { this.renderErrors() }
-          { page3 }
+        <div className="homepage-reg">
+          <div className="homepage-body">
+            <h1 className='front-head'>JUST ONE MORE.</h1>
+            { this.renderErrors() }
+            { page3 }
+          </div>
         </div>
       );
     }

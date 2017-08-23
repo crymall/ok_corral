@@ -1,11 +1,12 @@
 import React from 'react';
 import SignupFormContainer from '../session/signup_form_container';
+import AuthNavbar from '../navbars/auth_navbar';
 
 class HomePage extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Howdy, partner.</h1>
+      <div id='home-page'>
+        <AuthNavbar />
         <SignupFormContainer />
       </div>
     )
