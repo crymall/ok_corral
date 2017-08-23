@@ -87,7 +87,7 @@ class SignupForm extends React.Component {
         We're pleased to meet you, and pleased to help you find your sweetheart.
         </p>
 
-        <p>But first, we have to get down to brass tacks.</p>
+        <p>But first, let's get down to brass tacks.</p>
 
         <p>You are a...</p>
         <select name='user' value={this.state.value} onChange={this.handleInput('orientation')}>

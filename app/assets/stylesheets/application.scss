@@ -71,8 +71,10 @@ select {
   -webkit-appearance: none;
   -webkit-border-radius: 2px;
   background-image: image-url('chevron.png');
-  background-position: 100% 50%;
+  background-position: 92% 50%;
+  background-size: 15px 15px;
   background-repeat: no-repeat;
+  text-indent: 20px;
 }
 
 button {
