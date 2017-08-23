@@ -11,6 +11,14 @@ p, form, select {
   font-weight: 300;
 }
 
+li {
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  list-style: none;
+  color: white;
+}
+
 .homepage-reg {
   background-color: #ff9b38;
   display: flex;
@@ -87,4 +95,50 @@ button {
   padding-left: 10px;
   background-color: #552f5b;
   color: white;
+  margin-top: 5px;
+}
+
+.reg-text-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10px;
+  width: 100%;
+}
+
+label {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.labeltext {
+  margin-bottom: 7px;
+}
+
+input {
+  border: 0px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  height: 46px;
+  width: 180px;
+  text-indent: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.ageselect {
+  height: 46px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.textbutton {
+  margin-top: 15px;
 }

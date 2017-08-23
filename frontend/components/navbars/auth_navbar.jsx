@@ -6,7 +6,7 @@ class AuthNavbar extends React.Component {
         <div id='auth-navbar'>
           <div className='auth-nav-text'>
             <p id='logo'>okcorral</p>
-            <p>Have an account? Sign In</p>
+            <p>Have an account? <button className="signin-button">Sign In</button></p>
           </div>
         </div>
       );
