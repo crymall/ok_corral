@@ -45,7 +45,7 @@ export const signIn = (user) => (dispatch) => {
 };
 
 export const signOut = () => (dispatch) => {
-  return APIUtil.signout()
+  return APIUtil.logout()
     .then(() => {
       dispatch(receiveCurrentUser(null));
     }, (error) => {
