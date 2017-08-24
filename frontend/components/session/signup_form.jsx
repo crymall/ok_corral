@@ -1,5 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import { withRouter } from 'react-router';
 
 class SignupForm extends React.Component {
 
@@ -31,7 +32,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn) {
-      this.props.history.push('/users');
+      this.props.history.push('/');
     }
   }
 
@@ -260,4 +261,4 @@ class SignupForm extends React.Component {
 
 }
 
-export default SignupForm;
+export default withRouter(SignupForm);

@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import merge from 'lodash/merge';
+import { withRouter } from 'react-router';
 
 class LoginForm extends React.Component {
 
@@ -22,7 +23,6 @@ class LoginForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn) {
-      this.props.history.push('/users');
+      this.props.history.push('/');
     }
   }
 
@@ -59,10 +59,6 @@ class LoginForm extends React.Component {
   openModal() {
     this.setState({modalIsOpen: true});
   }
-
-  // afterOpenModal() {
-  //   this.subtitle.style.color = '#2b2b2b';
-  // }
 
   closeModal() {
     this.setState({modalIsOpen: false});
@@ -132,4 +128,4 @@ class LoginForm extends React.Component {
 
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

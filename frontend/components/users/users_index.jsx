@@ -11,7 +11,6 @@ class UsersIndex extends React.Component {
   }
 
   render() {
-    debugger
     let users;
     if (this.props.users) {
       users = this.props.users
