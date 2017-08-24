@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login(@user)
-      render '/api/users'
+      render '/users'
     else
       render json: ['Invalid Credentials'], status: 422
     end
@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     logout
-    render '/'
+    render '/api/users'
   end
 
 end

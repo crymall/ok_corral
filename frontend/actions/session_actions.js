@@ -36,7 +36,7 @@ export const signUp = (user) => (dispatch) => {
 };
 
 export const signIn = (user) => (dispatch) => {
-  return APIUtil.signin(user)
+  return APIUtil.login(user)
     .then((user) => {
       dispatch(receiveCurrentUser(user));
     }, (error) => {

@@ -1,4 +1,6 @@
 import React from 'react';
+import Modal from 'react-modal';
+import merge from 'lodash/merge';
 
 class LoginForm extends React.Component {
 
@@ -6,14 +8,25 @@ class LoginForm extends React.Component {
     super(props);
 
     this.state = {
-      username: '',
-      password: ''
+      user: {
+        username: '',
+        password: ''
+      },
+      modalIsOpen: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.openModal = this.openModal.bind(this);
+    // this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
+
+
+
+
+  //INPUT
 
   componentDidMount() {
     this.props.clearErrors();
@@ -26,16 +39,33 @@ class LoginForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
-    const user = {user: this.state};
+    e.preventDefault();
+    const user = this.state.user;
     this.props.processForm(user);
   }
 
   handleInput(type) {
-    return e => this.setState({
-      [type]: e.currentTarget.value
-    });
+    const old_state = this.state;
+
+    return e => this.setState(
+      merge({}, old_state, {user: {[type]: e.currentTarget.value}}))
   }
+
+  //MODAL
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  // afterOpenModal() {
+  //   this.subtitle.style.color = '#2b2b2b';
+  // }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
+  //ERRORS
 
   renderErrors() {
     if (this.props.errors.responseJSON) {
@@ -55,21 +85,44 @@ class LoginForm extends React.Component {
     }
   }
 
+
+
+
   render() {
     return (
       <div>
-        {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Username
-            <input name='user' onChange={this.handleInput('username')} value={`${this.state.username}`} />
-          </label>
-          <label>
-            Password
-            <input name='password' type='password' onChange={this.handleInput('password')} value={`${this.state.password}`} />
-          </label>
-          <input type='submit' value='Sign In' />
-        </form>
+
+        <div id='auth-navbar'>
+          <div className='auth-nav-text'>
+            <p id='logo'>okcorral</p>
+            <p>Have an account? <button className="signin-button" onClick={this.openModal}>Sign In</button></p>
+          </div>
+        </div>
+
+        <Modal
+          className='modal'
+          overlayClassName='modal-backdrop'
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          contentLabel="Example Modal"
+        >
+          <div className='modal-content'>
+            <p>Welcome Back</p>
+            <form onSubmit={this.handleSubmit}>
+              <div className='modal-form'>
+                <label className='modallabel'>
+                  <input className='modalinput' name='user' onChange={this.handleInput('username')} placeholder='Username' value={`${this.state.user.username}`} />
+                </label>
+                <label className='modallabel'>
+                  <input className='modalinput' name='password' type='password' onChange={this.handleInput('password')} placeholder='Password' value={`${this.state.user.password}`} />
+                </label>
+              </div>
+              <button className='modalbutton' type='submit' value='submit'>Sign In</button>
+            </form>
+          </div>
+      </Modal>
+
       </div>
     );
   }

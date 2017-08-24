@@ -154,3 +154,49 @@ input {
   color: white;
   margin-top: 5px;
 }
+
+.modal {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  height: 375px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.modal-content p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.modal-form {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.modalbutton {
+  width: 180px;
+}
+
+.modalinput {
+  border: 1px solid lightgrey;
+  height: 40px;
+}
