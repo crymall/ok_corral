@@ -40,8 +40,7 @@ li {
   font-weight: 800;
   word-spacing: 10px;
   color: white;
-  margin-top: 30px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 #auth-navbar {
@@ -49,6 +48,7 @@ li {
   display: flex;
   top: 0;
   left: 0;
+  padding-top: 20px;
   height: 70px;
   width: 100%;
   justify-content: center;
@@ -67,8 +67,8 @@ li {
 #logo {
   font-family: 'Baloo Bhaijaan', cursive;
   font-style: italic;
-  font-size: 30px;
-  margin-bottom: 0px;
+  font-size: 27px;
+  margin-bottom: 25px;
 }
 
 select {
@@ -94,7 +94,6 @@ button {
   height: 50px;
   border: 0px;
   border-radius: 2px;
-  padding-left: 10px;
   background-color: #552f5b;
   color: white;
   margin-top: 5px;
@@ -141,4 +140,17 @@ input {
 
 .textbutton {
   margin-top: 25px;
+}
+
+.signin-button {
+  font-size: inherit;
+  font-weight: 300;
+  width: 77px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-left: 10px;
+  background-color: transparent;
+  color: white;
+  margin-top: 5px;
 }

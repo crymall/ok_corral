@@ -36,7 +36,6 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     const user = this.state.user;
     this.props.processForm(user);
@@ -93,12 +92,12 @@ class SignupForm extends React.Component {
           <select name='user' value={this.state.value} onChange={this.handleInput('orientation')}>
             <option value='straight'>Straight</option>
             <option value='gay'>Gay</option>
-            <option value='bisexual'>Queer/Bisexual</option>
+            <option value='queer'>Bi/Queer</option>
           </select>
           <select name='user' value={this.state.value} onChange={this.handleInput('gender', this)}>
             <option value='woman'>Woman</option>
             <option value='man'>Man</option>
-            <option value='more'>Nonbinary Individual</option>
+            <option value='more'>Nonbinary</option>
           </select>
           <button type='submit' value='submit'>Continue</button>
         </form>
