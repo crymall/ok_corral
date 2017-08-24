@@ -18,6 +18,8 @@ class Navbar extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.handleSignout = this.handleSignout.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -38,7 +40,9 @@ class Navbar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state.user;
-    this.props.processForm(user);
+    debugger;
+    this.props.processForm(user)
+      .then(this.closeModal);
   }
 
   handleInput(type) {
@@ -46,6 +50,20 @@ class Navbar extends React.Component {
 
     return e => this.setState(
       merge({}, old_state, {user: {[type]: e.currentTarget.value}}))
+  }
+
+  handleSignout(e) {
+    e.preventDefault();
+    this.props.signOut()
+      .then(() => {this.props.history.push('/')});
+  }
+
+  handleGuest(e) {
+    e.preventDefault();
+    this.props.processForm({
+      username: 'reed',
+      password: 'password'
+    }).then(this.closeModal);
   }
 
   //MODAL
@@ -84,7 +102,7 @@ class Navbar extends React.Component {
         <div id='auth-navbar'>
           <div className='auth-nav-text'>
             <p id='logo'>okc</p>
-            <button className="signin-button" onClick={this.props.signOut}>Logout</button>
+            <button className="signin-button" onClick={this.handleSignout}>Logout</button>
           </div>
         </div>
       )
@@ -119,6 +137,7 @@ class Navbar extends React.Component {
                   </label>
                 </div>
                 <button className='modalbutton' type='submit' value='submit'>Sign In</button>
+                <button className='modalbutton' onClick={this.handleGuest}>Guest Login</button>
               </form>
             </div>
         </Modal>

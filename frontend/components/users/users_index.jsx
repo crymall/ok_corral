@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserItem } from './user_item';
 
 class UsersIndex extends React.Component {
 
@@ -14,13 +15,11 @@ class UsersIndex extends React.Component {
     let users;
     if (this.props.users) {
       users = this.props.users
-        .map((user, idx) => {return <li key={idx}>{user.username}</li>})
+        .map((user, idx) => {return <UserItem user={user} />})
 
       return (
         <div className='users-index'>
-          <ul>
             {users}
-          </ul>
         </div>
       );
     } else {

@@ -13,13 +13,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps= (dispatch) => {
   return {
     signOut: () => {
-      dispatch(signOut())
+      return dispatch(signOut())
     },
     processForm: (user) => {
-      dispatch(signIn(user));
+      return dispatch(signIn(user));
     },
     clearErrors: () => {
-      dispatch(clearErrors());
+      return dispatch(clearErrors());
     }
   };
 };

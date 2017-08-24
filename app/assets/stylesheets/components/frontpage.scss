@@ -162,8 +162,8 @@ input {
   top: 10%;
   left: 50%;
   margin-left: -150px;
-  width: 300px;
-  height: 375px;
+  width: 320px;
+  height: 425px;
   background-color: #f2f2f2;
   border-radius: 5px;
 }
@@ -181,6 +181,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 40px;
 }
 
@@ -195,6 +196,8 @@ input {
 }
 
 .modalbutton {
+  display: flex;
+  justify-content: center;
   width: 180px;
 }
 
@@ -202,4 +205,6 @@ input {
   border: 1px solid lightgrey;
   height: 40px;
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
