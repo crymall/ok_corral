@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/users');
     }
   }
 

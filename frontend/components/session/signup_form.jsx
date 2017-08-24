@@ -12,7 +12,7 @@ class SignupForm extends React.Component {
         email: '',
         password: '',
         zip: '',
-        age: '',
+        age: 18,
         gender: 'woman',
         orientation: 'straight'
       },
@@ -31,7 +31,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/users');
     }
   }
 
