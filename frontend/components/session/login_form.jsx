@@ -4,6 +4,9 @@ import merge from 'lodash/merge';
 
 class LoginForm extends React.Component {
 
+  //LoginForm contains Homepage navbar
+  //TODO: error handling for modal
+
   constructor(props) {
     super(props);
 
