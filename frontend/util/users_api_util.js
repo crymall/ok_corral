@@ -5,3 +5,11 @@ export const fetchUsers = (user) => {
     data: user
   });
 }
+
+export const fetchSingleUser = (user) => {
+  return $.ajax({
+    url: `/api/users/${user.id}`,
+    method: 'GET',
+    data: { user }
+  });
+}
