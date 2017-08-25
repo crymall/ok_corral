@@ -31,12 +31,6 @@ class Navbar extends React.Component {
     this.props.clearErrors();
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.currentUser) {
-  //     this.props.history.push('/users');
-  //   }
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state.user;
@@ -48,7 +42,8 @@ class Navbar extends React.Component {
     const old_state = this.state;
 
     return e => this.setState(
-      merge({}, old_state, {user: {[type]: e.currentTarget.value}}))
+      merge({}, old_state, {user: {[type]: e.currentTarget.value}})
+    );
   }
 
   handleSignout(e) {

@@ -6,11 +6,15 @@
 .user-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  width: 100%;
   max-width: 900px;
 }
 
 .user-item {
   width: 280px;
   height: 400px;
+  margin-right: 9px;
+  margin-left: 9px;
+  margin-bottom: 10px;
+  border: 1px solid black;
 }

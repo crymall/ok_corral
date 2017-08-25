@@ -9,8 +9,8 @@ export const receiveAllUsers = (users) => {
   }
 }
 
-export const fetchAllUsers = () => (dispatch) => {
-  return APIUtil.fetchUsers()
+export const fetchAllUsers = (params) => (dispatch) => {
+  return APIUtil.fetchUsers(params)
     .then((users) => {
       dispatch(receiveAllUsers(users));
     });

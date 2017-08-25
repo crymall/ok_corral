@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAllUsers: () => dispatch(fetchAllUsers()),
+    fetchAllUsers: (params) => dispatch(fetchAllUsers(params)),
   };
 };
 
