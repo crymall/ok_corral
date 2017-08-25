@@ -1,0 +1,16 @@
+.users-index {
+  display: flex;
+  justify-content: center;
+}
+
+.user-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
+}
+
+.user-item {
+  width: 280px;
+  height: 400px;
+}

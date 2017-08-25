@@ -40,7 +40,6 @@ class Navbar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state.user;
-    debugger;
     this.props.processForm(user)
       .then(this.closeModal);
   }
@@ -99,10 +98,13 @@ class Navbar extends React.Component {
   render() {
     if (this.props.currentUser) {
       return(
-        <div id='auth-navbar'>
-          <div className='auth-nav-text'>
-            <p id='logo'>okc</p>
-            <button className="signin-button" onClick={this.handleSignout}>Logout</button>
+        <div id='navbar'>
+          <div className='nav-text'>
+            <p id='small-logo'>okc</p>
+            <div className='nav-buttons'>
+              <button className='messages-button'></button>
+              <button className='signout-button' onClick={this.handleSignout}></button>
+            </div>
           </div>
         </div>
       )
@@ -113,7 +115,7 @@ class Navbar extends React.Component {
           <div id='auth-navbar'>
             <div className='auth-nav-text'>
               <p id='logo'>okcorral</p>
-              <p>Have an account? <button className="signin-button" onClick={this.openModal}>Sign In</button></p>
+              <p>Have an account? <button className='signin-button' onClick={this.openModal}>Sign In</button></p>
             </div>
           </div>
 

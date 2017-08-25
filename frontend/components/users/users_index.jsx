@@ -15,11 +15,14 @@ class UsersIndex extends React.Component {
     let users;
     if (this.props.users) {
       users = this.props.users
-        .map((user, idx) => {return <UserItem user={user} />})
+        .map((user, idx) => {return <UserItem className='user-item' user={user} />})
 
       return (
+
         <div className='users-index'>
+          <div className='user-items'>
             {users}
+          </div>
         </div>
       );
     } else {
