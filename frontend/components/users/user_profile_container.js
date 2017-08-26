@@ -2,9 +2,11 @@ import UserProfile from './user_profile';
 import { connect } from 'react-redux';
 import { fetchSingleUser } from '../../actions/user_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const user = state.users[ownProps.match.params.user_id];
   return {
-    user: state
+    user: user,
+    currentUser: state.session.currentUser
   };
 };
 

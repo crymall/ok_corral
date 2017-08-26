@@ -20,7 +20,7 @@ li {
 }
 
 .nav-buttons {
-  width: 100px;
+  width: 150px;
   height: 40px;
   margin-right: 15px;
   margin-top: 10px;
@@ -48,6 +48,18 @@ li {
   height: 40px;
   border-radius: 4px;
   background-image: image-url('messages.png');
+  background-size: 100%;
+  background-position: 50% 50%;
+  margin-bottom: 10px;
+}
+
+.profile-button {
+  font-size: inherit;
+  font-weight: 300;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-image: image-url('profile.png');
   background-size: 100%;
   background-position: 50% 50%;
   margin-bottom: 10px;

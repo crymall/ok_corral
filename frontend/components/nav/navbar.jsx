@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 import merge from 'lodash/merge';
 
 class Navbar extends React.Component {
@@ -98,6 +99,7 @@ class Navbar extends React.Component {
             <p id='small-logo'>okc</p>
             <div className='nav-buttons'>
               <button className='messages-button'></button>
+              <Link to={`/users/${this.props.currentUser.id}`}><button className='profile-button'></button></Link>
               <button className='signout-button' onClick={this.handleSignout}></button>
             </div>
           </div>
