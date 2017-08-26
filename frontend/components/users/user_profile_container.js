@@ -4,10 +4,16 @@ import { fetchSingleUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.users[ownProps.match.params.user_id];
-  return {
-    user: user,
-    currentUser: state.session.currentUser
-  };
+  if (state.session.currentUser) {
+    return {
+      user: user,
+      currentUser: state.session.currentUser
+    };
+  } else {
+    return {
+      user: user,
+    };
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
