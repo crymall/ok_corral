@@ -22,7 +22,6 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    debugger;
     if (this.props.user) {
       if (this.props.currentUser.id !== this.props.user.id) {
         return (
