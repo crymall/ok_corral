@@ -58,7 +58,7 @@ class UsersIndex extends React.Component {
   render() {
     if (this.props.users) {
       let users = this.props.users
-        .map((user, idx) => {return <UserItem className='user-item' user={user} />})
+        .map((user, idx) => {return <UserItem className='user-item' user={user} key={user.id}/>})
 
       return (
         <div className='search-index'>
