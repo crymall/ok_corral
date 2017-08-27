@@ -13,3 +13,11 @@ export const fetchSingleUser = (user) => {
     data: { user }
   });
 }
+
+export const updateSingleUser = (user) => {
+  return $.ajax({
+    url: `/api/users/${user.id}`,
+    method: 'PATCH',
+    data: { user }
+  });
+}

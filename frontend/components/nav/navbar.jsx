@@ -9,7 +9,6 @@ class Navbar extends React.Component {
     super(props);
 
     this.state = {
-
       user: {
         username: '',
         password: ''
@@ -120,7 +119,6 @@ class Navbar extends React.Component {
             className='modal'
             overlayClassName='modal-backdrop'
             isOpen={this.state.modalIsOpen}
-            onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
             contentLabel="Example Modal"
           >

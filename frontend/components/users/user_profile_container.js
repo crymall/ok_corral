@@ -1,6 +1,6 @@
 import UserProfile from './user_profile';
 import { connect } from 'react-redux';
-import { fetchSingleUser } from '../../actions/user_actions';
+import { fetchSingleUser, editSingleUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const user = state.users[ownProps.match.params.user_id];
@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchSingleUser: (params) => dispatch(fetchSingleUser(params)),
+    processForm: (params) => dispatch(editSingleUser(params))
   };
 };
 

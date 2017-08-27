@@ -131,6 +131,10 @@ input {
   font-size: 14px;
 }
 
+input:focus {
+  outline: none;
+}
+
 .ageselect {
   height: 46px;
 }

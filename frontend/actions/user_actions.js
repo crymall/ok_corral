@@ -30,3 +30,10 @@ export const fetchSingleUser = (params) => (dispatch) => {
       dispatch(receiveSingleUser(user));
     });
 }
+
+export const editSingleUser = (params) => (dispatch) => {
+  return APIUtil.updateSingleUser(params)
+    .then((user) => {
+      dispatch(receiveSingleUser(user));
+    });
+}
