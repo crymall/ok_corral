@@ -24,6 +24,7 @@ class UsersIndex extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.toggleAgesForm = this.toggleAgesForm.bind(this);
     this.toggleDistanceForm = this.toggleDistanceForm.bind(this);
+    this.closeForms = this.closeForms.bind(this);
   }
 
   matches() {
@@ -45,7 +46,6 @@ class UsersIndex extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     this.matches();
   }
 
@@ -81,6 +81,14 @@ class UsersIndex extends React.Component {
     } else if (this.state.distanceIsOpen === false) {
       this.setState({distanceIsOpen: true});
     } else {
+      this.setState({distanceIsOpen: false});
+    }
+  }
+
+  closeForms() {
+    if (this.state.ageIsOpen) {
+      this.setState({ageIsOpen: false});
+    } else if (this.state.distanceIsOpen) {
       this.setState({distanceIsOpen: false});
     }
   }
@@ -135,7 +143,7 @@ class UsersIndex extends React.Component {
             </p>
           </div>
 
-          <div className='users-index'>
+          <div className='users-index' onClick={this.closeForms}>
             <div className='user-items'>
               {users}
             </div>
