@@ -101,6 +101,10 @@ button {
   margin-top: 5px;
 }
 
+button:focus {
+  outline: none;
+}
+
 .reg-text-form {
   display: flex;
   flex-direction: column;

@@ -41,6 +41,10 @@ li {
   margin-bottom: 10px;
 }
 
+.signout-button:active {
+  outline: none;
+}
+
 .messages-button {
   font-size: inherit;
   font-weight: 300;
@@ -54,6 +58,10 @@ li {
   margin-right: 2px;
 }
 
+.messages-button:active {
+  outline: none;
+}
+
 .profile-button {
   font-size: inherit;
   font-weight: 300;
@@ -65,6 +73,10 @@ li {
   background-position: 50% 50%;
   margin-bottom: 10px;
   margin-left: 2px;
+}
+
+.profile-button:active {
+  outline: none;
 }
 
 #small-logo {

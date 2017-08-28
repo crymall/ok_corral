@@ -1,2 +1,61 @@
+h1 {
+  font-weight: lighter;
+  color: white;
+  margin-top: 120px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+  color: white;
+  margin-top: 0px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  border-top: 1px solid rgba(178, 99, 191, 0.3);
+  background-color: #552f5b;
+}
+
+.profile-header-items {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+}
+
+.profile-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
 img {
+  width: 175px;
+  height: 175px;
+  cursor: pointer;
+  margin-top: 60px;
+  margin-right: 20px;
+}
+
+.profile-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  width: 100%;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }

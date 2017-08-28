@@ -74,31 +74,42 @@ class UserProfile extends React.Component {
       if (!this.props.user) {
         return (
           <div>
-            <img
-              src={this.props.currentUser.image_url ?
-                `${this.state.user.image_url || this.props.currentUser.image_url}`
-                : 'http://res.cloudinary.com/reeedo/image/upload/c_scale,w_173/v1503885179/blankprofile_ewsuws.png'}
-              onClick={this.upload}
-            />
-            <h1>{this.props.currentUser.username}</h1>
-              <h2>My self-summary <button>Edit</button></h2>
-              <p>{this.props.currentUser.summary}</p>
-              <h2>What I'm doing with my life <button>Edit</button></h2>
-              <p>{this.props.currentUser.doing_with_life}</p>
-              <h2>I'm really good at <button>Edit</button></h2>
-              <p>{this.props.currentUser.good_at}</p>
-              <h2>Favorite books, movies, shows, music, and food <button>Edit</button></h2>
-              <p>{this.props.currentUser.fav_media}</p>
-              <h2>Six things I could never do without <button>Edit</button></h2>
-              <p>{this.props.currentUser.six_things}</p>
-              <h2>I spend a lot of time thinking about <button>Edit</button></h2>
-              <p>{this.props.currentUser.thinking_about}</p>
-              <h2>On a typical Friday night I am <button>Edit</button></h2>
-              <p>{this.props.currentUser.fri_night}</p>
-              <h2>You should message me if <button>Edit</button></h2>
-              <p>{this.props.currentUser.message_if}</p>
+            <div className='profile-header'>
+              <div className='profile-header-items'>
+                <img
+                  src={this.props.currentUser.image_url ?
+                    `${this.state.user.image_url || this.props.currentUser.image_url}`
+                    : 'http://res.cloudinary.com/reeedo/image/upload/v1503892978/ic_account_circle_ifhpuy.png'}
+                  onClick={this.upload}
+                />
+                <div className='profile-header-text'>
+                  <h1>{this.props.currentUser.username}</h1>
+                  <h3>{this.props.currentUser.age}</h3>
+                </div>
+              </div>
+            </div>
+            <div className='profile-body'>
+              <div className='profile-text'>
+                <h2>My self-summary <button>Edit</button></h2>
+                <p>{this.props.currentUser.summary}</p>
+                <h2>What I'm doing with my life <button>Edit</button></h2>
+                <p>{this.props.currentUser.doing_with_life}</p>
+                <h2>I'm really good at <button>Edit</button></h2>
+                <p>{this.props.currentUser.good_at}</p>
+                <h2>Favorite books, movies, shows, music, and food <button>Edit</button></h2>
+                <p>{this.props.currentUser.fav_media}</p>
+                <h2>Six things I could never do without <button>Edit</button></h2>
+                <p>{this.props.currentUser.six_things}</p>
+                <h2>I spend a lot of time thinking about <button>Edit</button></h2>
+                <p>{this.props.currentUser.thinking_about}</p>
+                <h2>On a typical Friday night I am <button>Edit</button></h2>
+                <p>{this.props.currentUser.fri_night}</p>
+                <h2>You should message me if <button>Edit</button></h2>
+                <p>{this.props.currentUser.message_if}</p>
+              </div>
+            </div>
 
-            <Link to='/users'>Back to Index</Link>
+          <Link to='/users'>Back to Index</Link>
           </div>
         )
       }

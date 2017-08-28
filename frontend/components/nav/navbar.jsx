@@ -95,7 +95,7 @@ class Navbar extends React.Component {
       return(
         <div id='navbar'>
           <div className='nav-text'>
-            <p id='small-logo'>okc</p>
+            <Link to='/users/'><p id='small-logo'>okc</p></Link>
             <div className='nav-buttons'>
               <button className='messages-button'></button>
               <Link to={`/users/${this.props.currentUser.id}`}><button className='profile-button'></button></Link>
