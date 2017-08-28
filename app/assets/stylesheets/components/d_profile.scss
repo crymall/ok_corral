@@ -51,14 +51,14 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 35px;
-  width: 100%;
+  margin-left: 80px;
+  width: 70%;
 }
 
 .profile-text {
   display: flex;
   flex-direction: column;
   width: 70%;
-  margin-left: 50px;
 }
 
 .profile-edit-button {
@@ -90,4 +90,12 @@ img {
   width: 100px;
   height: 40px;
   font-size: 16px;
+  color: black;
+  background-color: #f2f2f2;
+  border: 1px solid lightgrey;
+}
+
+.profile-item-header {
+  margin-bottom: 0px;
+  margin-top: 23px;
 }
