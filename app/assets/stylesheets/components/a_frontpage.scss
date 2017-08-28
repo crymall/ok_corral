@@ -89,6 +89,10 @@ select {
   text-indent: 20px;
 }
 
+select:focus {
+  outline: none;
+}
+
 button {
   font-size: 20px;
   font-weight: 300;
@@ -174,6 +178,10 @@ input:focus {
   height: 425px;
   background-color: #f2f2f2;
   border-radius: 5px;
+}
+
+.modal:focus {
+  outline: none;
 }
 
 .modal-backdrop {

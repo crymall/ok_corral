@@ -16,7 +16,8 @@ li {
   flex-direction: row;
   justify-content: space-between;
   align-items: middle;
-
+  font-size: 16px;
+  color: #e5c9e9;
 }
 
 .nav-buttons {
@@ -79,11 +80,24 @@ li {
   outline: none;
 }
 
+.left-side {
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  justify-content: space-between;
+}
+
+.left-menu-item {
+  margin-top: 21px;
+  font-size: 16px;
+  color: #e5c9e9;
+}
+
 #small-logo {
   font-family: 'Baloo Bhaijaan', cursive;
   font-style: italic;
   font-size: 27px;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-bottom: 0px;
   margin-left: 30px;
   color: white;
