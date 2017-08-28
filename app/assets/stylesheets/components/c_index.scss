@@ -12,12 +12,42 @@
 }
 
 .user-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 280px;
   height: 400px;
   margin-right: 9px;
   margin-left: 9px;
   margin-bottom: 10px;
-  border: 1px solid black;
+  border: 1px solid rgba(178, 99, 191, 0.1);
+  box-shadow: 3px 3px 10px lightgrey;
+}
+
+.user-item-image {
+  width: 250px;
+  height: 250px;
+  margin: 0px;
+  margin-bottom: 35px;
+}
+
+.user-item-text {
+  margin-bottom: 20px;
+}
+
+.user-item-name {
+  margin: 5px;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.user-item-age {
+  margin: 5px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .search-index {
@@ -37,25 +67,26 @@
 .age-search-form {
   position: absolute;
   color: black;
-  background-color: #ffeacc;
+  background-color: #f2f2f2;
   padding: 5px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   top: 70px;
   width: 200px;
-  height: 110px;
+  height: 90px;
 }
 
 .dist-search-form {
   position: absolute;
   color: black;
-  background-color: #ffeacc;
+  background-color: #f2f2f2;
   padding: 5px;
+  padding-top: 9px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   top: 70px;
-  width: 300px;
-  height: 110px;
+  width: 275px;
+  height: 80px;
 }
 
 .search-item {
@@ -82,8 +113,8 @@
 
 input[type=range] {
   -webkit-appearance: none;
-  width: 80%;
-  margin-left: 30px;
+  width: 92%;
+  margin-bottom: 0px;
   background: transparent;
 }
 
