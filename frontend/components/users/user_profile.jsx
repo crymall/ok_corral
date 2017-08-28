@@ -252,21 +252,21 @@ class UserProfile extends React.Component {
 
             <div className='profile-body'>
               <div className='profile-text'>
-                <h2>My self-summary</h2>
+                <h2 className='profile-item-header'>My self-summary</h2>
                 <p>{this.props.user.summary}</p>
-                <h2>What I'm doing with my life</h2>
+                <h2 className='profile-item-header'>What I'm doing with my life</h2>
                 <p>{this.props.user.doing_with_life}</p>
-                <h2>I'm really good at</h2>
+                <h2 className='profile-item-header'>I'm really good at</h2>
                 <p>{this.props.user.good_at}</p>
-                <h2>Favorite books, movies, shows, music, and food</h2>
+                <h2 className='profile-item-header'>Favorite books, movies, shows, music, and food</h2>
                 <p>{this.props.user.fav_media}</p>
-                <h2>Six things I could never do without</h2>
+                <h2 className='profile-item-header'>Six things I could never do without</h2>
                 <p>{this.props.user.six_things}</p>
-                <h2>I spend a lot of time thinking about</h2>
+                <h2 className='profile-item-header'>I spend a lot of time thinking about</h2>
                 <p>{this.props.user.thinking_about}</p>
-                <h2>On a typical Friday night I am</h2>
+                <h2 className='profile-item-header'>On a typical Friday night I am</h2>
                 <p>{this.props.user.fri_night}</p>
-                <h2>You should message me if</h2>
+                <h2 className='profile-item-header'>You should message me if</h2>
                 <p>{this.props.user.message_if}</p>
               </div>
             </div>
