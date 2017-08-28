@@ -58,4 +58,36 @@ img {
   display: flex;
   flex-direction: column;
   width: 70%;
+  margin-left: 50px;
+}
+
+.profile-edit-button {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-image: image-url('edit.png');
+  background-size: 100%;
+  background-position: 50% 50%;
+  margin-left: 10px;
+}
+
+.profile-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-input-text {
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  height: 100px;
+  width: 80%;
+}
+
+.profile-submit-button {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
 }

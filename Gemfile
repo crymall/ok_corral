@@ -23,6 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'geocoder'
 gem 'geokit-rails'
 gem 'figaro'
+gem 'faker'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

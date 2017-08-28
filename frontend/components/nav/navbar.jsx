@@ -55,7 +55,7 @@ class Navbar extends React.Component {
   handleGuest(e) {
     e.preventDefault();
     this.props.processForm({
-      username: 'reed',
+      username: 'sampleuser',
       password: 'password'
     }).then(this.closeModal);
   }
