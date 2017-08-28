@@ -41,6 +41,14 @@
   margin-bottom: 20px;
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+a:-moz-any-link {
+  text-decoration: none;
+}
+
 .user-item-name {
   margin: 5px;
   color: black;
