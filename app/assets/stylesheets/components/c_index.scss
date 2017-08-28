@@ -145,39 +145,43 @@ input[type=range]::-ms-track {
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 34px;
-  width: 34px;
+  height: 40px;
+  width: 40px;
   background: transparent;
   background-image: image-url('slider.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 50% 52%;
   cursor: pointer;
   margin-top: -14px;
 }
 
 input[type=range]::-moz-range-thumb {
   height: 40px;
-  width: 42px;
+  width: 40px;
   background: transparent;
   background-image: image-url('slider.png');
-  background-size: 100%;
-  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 50% 52%;
   cursor: pointer;
 }
 
 input[type=range]::-ms-thumb {
   height: 40px;
-  width: 42px;
+  width: 40px;
   border-radius: 3px;
   background: transparent;
   background-image: image-url('slider.png');
-  background-size: 100%;
-  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 50% 52%;
   cursor: pointer;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 5px;
+  height: 10px;
   cursor: pointer;
   background: #552f5b;
   border-radius: 7px;
@@ -185,7 +189,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
 input[type=range]::-moz-range-track {
   width: 100%;
-  height: 5px;
+  height: 10px;
   cursor: pointer;
   background: #552f5b;
   border-radius: 7px;
