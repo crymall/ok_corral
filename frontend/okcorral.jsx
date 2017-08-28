@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store = configureStore();
 
-  window.store = store;
-  window.fetchAllUsers = fetchAllUsers;
-
   ReactDOM.render(<Root store={ store } />, root);
 
 });

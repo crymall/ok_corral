@@ -8,7 +8,7 @@
 
 User.destroy_all
 User.create({username: 'reed', email: 'reed.gaines@gmail.com', password: 'password',
-            zip: 11221, age: 26, gender: "man", orientation: "straight", session_token: ""})
+            zip: 11221, age: 26, gender: "man", orientation: "queer", session_token: ""})
 User.create({username: 'holliday', email: 'doc@holliday.com', password: 'password',
             zip: 10027, age: 20, gender: "man", orientation: "gay", session_token: ""})
 User.create({username: 'Ikey', email: 'ike@clanton.com', password: 'password',

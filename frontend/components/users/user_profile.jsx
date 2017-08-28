@@ -8,12 +8,63 @@ class UserProfile extends React.Component {
     super(props);
 
     this.state = {
-      
+      user: {
+        summary: '',
+        doing_with_life: '',
+        good_at: '',
+        fav_media: '',
+        six_things: '',
+        thinking_about: '',
+        fri_night: '',
+        message_if: '',
+        image_url: ''
+      },
+      summaryIsOpen: false,
+      doingIsOpen: false,
+      goodIsOpen: false,
+      favIsOpen: false,
+      sixIsOpen: false,
+      thinkingIsOpen: false,
+      friIsOpen: false,
+      messageIsOpen: false
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.upload = this.upload.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchSingleUser(this.props.match.params.user_id);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = this.state.user;
+    this.props.processForm(user);
+  }
+
+  handleInput(type) {
+    const old_state = this.state;
+
+    return e => this.setState(
+      merge({}, old_state, {user: {[type]: e.currentTarget.value}})
+    );
+  }
+
+  upload(e) {
+    e.preventDefault();
+
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      (error, image) => {
+        if (error === null) {
+          const img = image[0].url
+          this.props.processForm({image_url: img});
+          this.setState({user: {image_url: img}});
+        }
+      }
+    );
   }
 
   render() {
@@ -23,6 +74,12 @@ class UserProfile extends React.Component {
       if (!this.props.user) {
         return (
           <div>
+            <img
+              src={this.props.currentUser.image_url ?
+                `${this.state.user.image_url || this.props.currentUser.image_url}`
+                : 'http://res.cloudinary.com/reeedo/image/upload/c_scale,w_173/v1503885179/blankprofile_ewsuws.png'}
+              onClick={this.upload}
+            />
             <h1>{this.props.currentUser.username}</h1>
               <h2>My self-summary <button>Edit</button></h2>
               <p>{this.props.currentUser.summary}</p>

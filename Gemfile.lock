@@ -63,6 +63,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     geocoder (1.4.4)
     geokit (1.11.0)
     geokit-rails (2.3.0)
@@ -182,6 +184,7 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails (~> 4.2)
+  figaro
   geocoder
   geokit-rails
   jbuilder (~> 2.5)
@@ -199,4 +202,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
