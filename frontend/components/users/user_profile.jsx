@@ -16,8 +16,7 @@ class UserProfile extends React.Component {
         six_things: '',
         thinking_about: '',
         fri_night: '',
-        message_if: '',
-        image_url: ''
+        message_if: ''
       },
       summaryIsOpen: false,
       doingIsOpen: false,
@@ -31,7 +30,6 @@ class UserProfile extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    this.upload = this.upload.bind(this);
     this.toggleSummary = this.toggleSummary.bind(this);
     this.toggleDoing = this.toggleDoing.bind(this);
     this.toggleGood = this.toggleGood.bind(this);
@@ -59,21 +57,6 @@ class UserProfile extends React.Component {
 
     return e => this.setState(
       merge({}, old_state, {user: this.props.currentUser}, {user: {[type]: e.currentTarget.value}})
-    );
-  }
-
-  upload(e) {
-    e.preventDefault();
-
-    cloudinary.openUploadWidget(
-      window.cloudinary_options,
-      (error, image) => {
-        if (error === null) {
-          const img = image[0].url
-          this.props.processForm({image_url: img});
-          this.setState({user: {image_url: img}});
-        }
-      }
     );
   }
 
@@ -148,20 +131,6 @@ class UserProfile extends React.Component {
       if (!this.props.user) {
         return (
           <div>
-            <div className='profile-header'>
-              <div className='profile-header-items'>
-                <img
-                  src={this.props.currentUser.image_url ?
-                    `${this.state.user.image_url || this.props.currentUser.image_url}`
-                    : 'http://res.cloudinary.com/reeedo/image/upload/v1503892978/ic_account_circle_ifhpuy.png'}
-                  onClick={this.upload}
-                />
-                <div className='profile-header-text'>
-                  <h1>{this.props.currentUser.username}</h1>
-                  <h3>{this.props.currentUser.age}</h3>
-                </div>
-              </div>
-            </div>
             <div className='profile-body'>
               <div className='profile-text'>
                 <h2 className='profile-item-header'>My self-summary <button onClick={this.toggleSummary} className='profile-edit-button'></button></h2>
@@ -236,20 +205,6 @@ class UserProfile extends React.Component {
       else {
          return (
           <div>
-              <div className='profile-header'>
-                <div className='profile-header-items'>
-                  <img
-                    src={this.props.user.image_url ?
-                      `${this.props.user.image_url}`
-                      : 'http://res.cloudinary.com/reeedo/image/upload/v1503892978/ic_account_circle_ifhpuy.png'}
-                  />
-                  <div className='profile-header-text'>
-                    <h1>{this.props.user.username}</h1>
-                    <h3>{this.props.user.age}</h3>
-                  </div>
-                </div>
-              </div>
-
             <div className='profile-body'>
               <div className='profile-text'>
                 <h2 className='profile-item-header'>My self-summary</h2>
