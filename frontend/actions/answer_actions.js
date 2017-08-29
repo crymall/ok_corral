@@ -18,7 +18,7 @@ export const receiveSingleAnswer = (answer) => {
 }
 
 export const fetchAllAnswers = (params) => (dispatch) => {
-  return APIUtil.fetchAnswers(params)
+  return APIUtil.fetchAllAnswers(params)
     .then((answers) => {
       dispatch(receiveAllAnswers(answers));
     });
@@ -26,6 +26,20 @@ export const fetchAllAnswers = (params) => (dispatch) => {
 
 export const fetchSingleAnswer = (params) => (dispatch) => {
   return APIUtil.fetchSingleAnswer(params)
+    .then((answer) => {
+      dispatch(receiveSingleAnswer(answer));
+    });
+}
+
+export const editSingleAnswer = (params) => (dispatch) => {
+  return APIUtil.updateSingleAnswer(params)
+    .then((answer) => {
+      dispatch(receiveSingleAnswer(answer));
+    });
+}
+
+export const createAnswer = () => (answer) => (dispatch) => {
+  return APIUtil.createAnswer(answer)
     .then((answer) => {
       dispatch(receiveSingleAnswer(answer));
     });

@@ -1,7 +1,7 @@
 class Api::AnswersController < ApplicationController
 
   def index
-    @answers = Answer.find_by(user_id: params[:user][:id])
+    @answers = Answer.where(user_id: params[:user][:id])
     render :index
   end
 

@@ -1,8 +1,8 @@
-export const fetchAnswers = (answer) => {
+export const fetchAllAnswers = (answer) => {
   return $.ajax({
     url: '/api/answers',
     method: 'GET',
-    data: user
+    data: answer
   });
 }
 
@@ -20,4 +20,12 @@ export const updateSingleAnswer = (answer) => {
     method: 'PATCH',
     data: { answer }
   });
+}
+
+export const createAnswer = (answer) => {
+  return $.ajax({
+    url: '/api/answers',
+    method: 'PUT',
+    data: answer
+  })
 }

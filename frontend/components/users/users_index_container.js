@@ -4,6 +4,7 @@ import { fetchAllUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   const arrayOfUsers = Object.keys(state.users).map((id) => state.users[id]);
+
   return {
     users: arrayOfUsers
   };
