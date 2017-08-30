@@ -1,5 +1,6 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import { Link } from 'react-router-dom';
 
 class UserProfileHeader extends React.Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class UserProfileHeader extends React.Component {
                   <h1>{this.props.currentUser.username}</h1>
                   <h3>{this.props.currentUser.age}</h3>
                 </div>
+                <Link to={`/users/${this.props.currentUser.id}/questions`}><button className='question-index-button'>Questions</button></Link>
               </div>
             </div>
           </div>
@@ -73,6 +75,7 @@ class UserProfileHeader extends React.Component {
                   <h1>{this.props.user.username}</h1>
                   <h3>{this.props.user.age}</h3>
                 </div>
+                <Link to={`/users/${this.props.user.id}/questions`}><button className='question-index-button'>Questions</button></Link>
               </div>
             </div>
           </div>

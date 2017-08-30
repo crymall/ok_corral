@@ -113,3 +113,18 @@ img {
   margin-bottom: 0px;
   margin-top: 23px;
 }
+
+.question-index-button {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  color: white;
+  background-color: #b263bf;
+  margin-top: 135px;
+  margin-left: 50px;
+}
+
+.question-index-button:hover {
+  background-color: white;
+  color: black;
+}
