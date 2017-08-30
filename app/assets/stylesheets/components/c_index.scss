@@ -24,6 +24,7 @@
   margin-bottom: 10px;
   border: 1px solid rgba(178, 99, 191, 0.1);
   box-shadow: 3px 3px 10px lightgrey;
+  background-color: white;
 }
 
 .user-item-image {
@@ -81,7 +82,7 @@ a:-moz-any-link {
 .age-search-form {
   position: absolute;
   color: black;
-  background-color: #f2f2f2;
+  background-color: white;
   padding: 5px;
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -93,7 +94,7 @@ a:-moz-any-link {
 .dist-search-form {
   position: absolute;
   color: black;
-  background-color: #f2f2f2;
+  background-color: white;
   padding: 5px;
   padding-top: 9px;
   border: 1px solid lightgrey;
@@ -116,6 +117,11 @@ a:-moz-any-link {
 }
 
 .age-input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  text-indent: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

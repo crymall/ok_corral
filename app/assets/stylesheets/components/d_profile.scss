@@ -31,7 +31,9 @@ h3 {
 .profile-header-items {
   display: flex;
   flex-direction: row;
+  margin-right: 17%;
   width: 70%;
+  max-width: 700px;
 }
 
 .profile-header-text {
@@ -45,20 +47,27 @@ img {
   cursor: pointer;
   margin-top: 60px;
   margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.profile-body-container {
+  display: flex;
+  justify-content: center;
 }
 
 .profile-body {
   display: flex;
   justify-content: center;
-  margin-top: 35px;
-  margin-left: 80px;
+  margin-top: 60px;
+  margin-right: 17%;
   width: 70%;
+  max-width: 700px;
 }
 
 .profile-text {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  justify-content: center;
 }
 
 .profile-edit-button {
@@ -92,7 +101,7 @@ img {
   height: 40px;
   font-size: 16px;
   color: black;
-  background-color: #f2f2f2;
+  background-color: white;
   border: 1px solid lightgrey;
 }
 

@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  background-color: #f2f2f2
 }
 
 h1 {
@@ -41,6 +42,7 @@ li {
   word-spacing: 10px;
   color: white;
   margin-bottom: 20px;
+  margin-top: 60px;
 }
 
 #auth-navbar {
@@ -128,7 +130,7 @@ label {
   margin-bottom: 7px;
 }
 
-input {
+input[type='text'] {
   border: 0px;
   -webkit-appearance: none;
   -webkit-border-radius: 2px;
@@ -218,9 +220,26 @@ input:focus {
 }
 
 .modalinput {
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  text-indent: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   border: 1px solid lightgrey;
   height: 40px;
+  width: 180px;
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+
+.password-reg {
+  border: 0px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  height: 46px;
+  width: 180px;
+  text-indent: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }

@@ -130,7 +130,7 @@ class UserProfile extends React.Component {
     } else {
       if (!this.props.user) {
         return (
-          <div>
+          <div className='profile-body-container'>
             <div className='profile-body'>
               <div className='profile-text'>
                 <h2 className='profile-item-header'>My self-summary <button onClick={this.toggleSummary} className='profile-edit-button'></button></h2>
@@ -204,7 +204,7 @@ class UserProfile extends React.Component {
       }
       else {
          return (
-          <div>
+          <div className='profile-body-container'>
             <div className='profile-body'>
               <div className='profile-text'>
                 <h2 className='profile-item-header'>My self-summary</h2>

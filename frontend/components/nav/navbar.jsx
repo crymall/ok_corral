@@ -101,6 +101,7 @@ class Navbar extends React.Component {
             </div>
             <div className='nav-buttons'>
               <button className='messages-button'></button>
+              <Link to={`/users/${this.props.currentUser.id}/questions`}><button className='questions-button'></button></Link>
               <Link to={`/users/${this.props.currentUser.id}`}><button className='profile-button'></button></Link>
               <button className='signout-button' onClick={this.handleSignout}></button>
             </div>

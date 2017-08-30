@@ -21,7 +21,7 @@ li {
 }
 
 .nav-buttons {
-  width: 144px;
+  width: 184px;
   height: 40px;
   margin-right: 15px;
   margin-top: 10px;
@@ -37,7 +37,8 @@ li {
   height: 40px;
   border-radius: 4px;
   background-image: image-url('logout.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 72%;
   background-position: 50% 50%;
   margin-bottom: 10px;
 }
@@ -47,16 +48,15 @@ li {
 }
 
 .messages-button {
-  font-size: inherit;
-  font-weight: 300;
   width: 40px;
   height: 40px;
   border-radius: 4px;
   background-image: image-url('messages.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 72%;
   background-position: 50% 50%;
   margin-bottom: 10px;
-  margin-right: 2px;
+  margin-right: 17px;
 }
 
 .messages-button:active {
@@ -64,20 +64,31 @@ li {
 }
 
 .profile-button {
-  font-size: inherit;
-  font-weight: 300;
   width: 40px;
   height: 40px;
   border-radius: 4px;
   background-image: image-url('profile.png');
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 72%;
   background-position: 50% 50%;
   margin-bottom: 10px;
-  margin-left: 2px;
+  margin-right: 13px;
 }
 
 .profile-button:active {
   outline: none;
+}
+
+.questions-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-image: image-url('questions.png');
+  background-repeat: no-repeat;
+  background-size: 72%;
+  background-position: 50% 50%;
+  margin-bottom: 10px;
+  margin-right: 11px;
 }
 
 .left-side {

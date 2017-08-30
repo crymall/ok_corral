@@ -197,11 +197,11 @@ class SignupForm extends React.Component {
           </label>
           <label>
             <div className='labeltext'>Zip Code</div>
-            <input name='user' onChange={this.handleInput('zip')} value={`${this.state.user.zip}`} />
+            <input type='text' name='user' onChange={this.handleInput('zip')} value={`${this.state.user.zip}`} />
           </label>
           <label>
             <div className='labeltext'>Email Address</div>
-            <input name='user' onChange={this.handleInput('email')} value={`${this.state.user.email}`} />
+            <input type='text' name='user' onChange={this.handleInput('email')} value={`${this.state.user.email}`} />
           </label>
         </div>
         <button className='textbutton' type='submit' value='submit'>Next</button>
@@ -213,11 +213,11 @@ class SignupForm extends React.Component {
         <div className='inputs'>
           <label>
             <div className='labeltext'>Username</div>
-            <input name='user' onChange={this.handleInput('username')} value={`${this.state.user.username}`} />
+            <input type='text' name='user' onChange={this.handleInput('username')} value={`${this.state.user.username}`} />
           </label>
           <label>
             <div className='labeltext'>Password</div>
-            <input name='user' type='password' onChange={this.handleInput('password')} value={`${this.state.user.password}`} />
+            <input name='user' className='password-reg' type='password' onChange={this.handleInput('password')} value={`${this.state.user.password}`} />
           </label>
         </div>
         <button className='textbutton' type='submit' value='submit'>Yeehaw!</button>

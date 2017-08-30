@@ -25,7 +25,7 @@ export const updateSingleAnswer = (answer) => {
 export const createAnswer = (answer) => {
   return $.ajax({
     url: '/api/answers',
-    method: 'PUT',
+    method: 'POST',
     data: answer
   })
 }

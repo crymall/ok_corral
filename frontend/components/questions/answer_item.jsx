@@ -3,7 +3,7 @@ import QuestionsIndexContainer from './questions_index_container';
 
 export const AnswerItem = (props) => {
   return (
-    <div>
+    <div className='answer-item'>
       <h2 className='question'>{props.question[0].question_text}</h2>
       <ul className='answer-list'>
         <li className='answer-text'>{props.question[0].answer_one_text}</li>

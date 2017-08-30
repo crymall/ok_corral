@@ -1,5 +1,6 @@
 import React from 'react';
 import { AnswerItem } from './answer_item';
+import QuestionFormContainer from './question_form_container';
 
 class QuestionsIndex extends React.Component {
 
@@ -9,28 +10,44 @@ class QuestionsIndex extends React.Component {
 
   componentDidMount() {
     const params = {user: {id: this.props.match.params.user_id}};
-    this.props.fetchAllQuestions(params);
     this.props.fetchAllAnswers(params);
+    this.props.fetchAllQuestions(params);
   }
 
   render() {
-    if ((this.props.answers.length > 0) && (this.props.questions.length > 0)) {
-      let pairs = {};
-      this.props.questions.forEach((question) => pairs[question.id] = [question]);
-      this.props.answers.forEach((answer) => pairs[answer.question_id].concat(answer));
-      let answerItems = Object.keys(pairs).map((item) => {
-          return <AnswerItem className='answer-item' question={pairs[item]} key={item} />
-        });
+    let answerItems;
+    let unansweredItems;
 
-      return(
-        <div>
-          {answerItems}
+    if ((this.props.answers.length > 0) && (this.props.answeredQuestions.length > 0)) {
+      let pairs = {};
+      this.props.answeredQuestions.forEach((question) => pairs[question.id] = [question]);
+      this.props.answers.forEach((answer) => pairs[answer.question_id].concat(answer));
+      answerItems = Object.keys(pairs).map((item) => {
+          return <AnswerItem className='answer-item-container' question={pairs[item]} key={item} />
+        });
+    } else {
+      answerItems = null;
+    }
+    if ((this.props.unansweredQuestions.length > 0) && (parseInt(this.props.match.params.user_id) === this.props.currentUser.id)) {
+      unansweredItems = this.props.unansweredQuestions.map((question) => {
+                          return <QuestionFormContainer className='question-form-container' question={question} key={question.id} />
+                        });
+    } else {
+      unansweredItems = [[]];
+    }
+
+    return (
+        <div id='questions-index-container'>
+          <div id='questions-index'>
+            { unansweredItems[0] }
+            <h2>Answered Questions</h2>
+            <div className='answers-list'>
+              { answerItems }
+            </div>
+          </div>
         </div>
       );
-    } else {
-      return null;
     }
-  }
 }
 
-export default QuestionsIndex
+export default QuestionsIndex;

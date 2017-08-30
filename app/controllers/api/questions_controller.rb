@@ -6,7 +6,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find_by(id: params[:question])
+    @question = Question.find_by(id: params[:question][:id])
     render :show
   end
 

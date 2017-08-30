@@ -4,12 +4,23 @@ import { fetchAllQuestions, fetchSingleQuestion } from '../../actions/question_a
 import { fetchAllAnswers, fetchSingleAnswer, updateSingleAnswer, createAnswer } from '../../actions/answer_actions';
 
 const mapStateToProps = (state) => {
-  const arrayOfQuestions = Object.keys(state.questions).map((id) => state.questions[id]);
   const arrayOfAnswers = Object.keys(state.answers).map((id) => state.answers[id]);
-
+  const answeredQuestionIds = arrayOfAnswers.map((answer) => answer.question_id);
+  const answeredQuestions = [];
+  const unansweredQuestions = [];
+  Object.keys(state.questions)
+    .forEach((key) => {
+      if (answeredQuestionIds.includes(parseInt(key))) {
+        answeredQuestions.push(state.questions[key]);
+      } else {
+        unansweredQuestions.push(state.questions[key]);
+      }
+  });
   return {
-    questions: arrayOfQuestions,
-    answers: arrayOfAnswers
+    answers: arrayOfAnswers,
+    answeredQuestions: answeredQuestions,
+    unansweredQuestions: unansweredQuestions,
+    currentUser: state.session.currentUser
   };
 };
 

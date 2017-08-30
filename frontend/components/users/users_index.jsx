@@ -25,6 +25,8 @@ class UsersIndex extends React.Component {
     this.toggleAgesForm = this.toggleAgesForm.bind(this);
     this.toggleDistanceForm = this.toggleDistanceForm.bind(this);
     this.closeForms = this.closeForms.bind(this);
+    this.answersInCommon = this.answersInCommon.bind(this);
+    this.matchPercentage = this.matchPercentage.bind(this);
   }
 
   matches() {
@@ -98,11 +100,53 @@ class UsersIndex extends React.Component {
     this.setState({distanceIsOpen: false});
   }
 
+  //MATCHING
+
+  answersInCommon(user) {
+    let commonAnswers = [];
+
+    if (this.props.currentUser.answers && user.answers) {
+      this.props.currentUser.answers.forEach((answer) => {
+        user.answers.forEach((answer2) => {
+          if (answer.question_id === answer2.question_id) {
+            commonAnswers.push([answer, answer2]);
+          }
+        });
+      });
+    } else {
+      return null;
+    }
+
+    return commonAnswers;
+  }
+
+  matchPercentage(user) {
+    let myMatch = 50;
+    let theirMatch = 50;
+    let commonAnswers = this.answersInCommon(user);
+    if (commonAnswers.length > 0) {
+      let numberInCommon = commonAnswers.length;
+
+      commonAnswers.forEach((answerPair) => {
+        if (!answerPair[0].accepted_answers.includes(answerPair[1].answer_num.toString())) {
+          myMatch = (myMatch - (50/numberInCommon/answerPair[0].importance));
+        } else if (!answerPair[1].accepted_answers.includes(answerPair[0].answer_num.toString()))
+          theirMatch = (theirMatch - (50/numberInCommon/answerPair[1].importance));
+      })
+
+      return (Math.round(myMatch + theirMatch));
+    } else {
+      return 'N/A';
+    }
+  }
+
+
+
   render() {
     if (this.props.users) {
       let users = this.props.users
-        .map((user, idx) => {return <UserItem className='user-item' user={user} key={user.id}/>})
-
+        .map((user, idx) => {return <UserItem className='user-item' user={user} match={this.matchPercentage(user)} key={user.id}/>})
+      debugger
       return (
         <div className='search-index'>
           <div className='users-search'>

@@ -6,7 +6,8 @@ const mapStateToProps = (state) => {
   const arrayOfUsers = Object.keys(state.users).map((id) => state.users[id]);
 
   return {
-    users: arrayOfUsers
+    users: arrayOfUsers,
+    currentUser: state.session.currentUser
   };
 };
 

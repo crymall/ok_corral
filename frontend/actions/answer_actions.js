@@ -38,7 +38,7 @@ export const editSingleAnswer = (params) => (dispatch) => {
     });
 }
 
-export const createAnswer = () => (answer) => (dispatch) => {
+export const createAnswer = (answer) => (dispatch) => {
   return APIUtil.createAnswer(answer)
     .then((answer) => {
       dispatch(receiveSingleAnswer(answer));
