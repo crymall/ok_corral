@@ -6,10 +6,10 @@ export const AnswerItem = (props) => {
     <div className='answer-item'>
       <h2 className='question'>{props.question[0].question_text}</h2>
       <ul className='answer-list'>
-        <li className='answer-text'>{props.question[0].answer_one_text}</li>
-        <li className='answer-text'>{props.question[0].answer_two_text}</li>
-        <li className='answer-text'>{props.question[0].answer_three_text}</li>
-        <li className='answer-text'>{props.question[0].answer_four_text}</li>
+        <li className={(props.question[0].answers[0].answer_num === 1) ? 'highlighted-answer' : 'answer-text'}>{props.question[0].answer_one_text}</li>
+        <li className={(props.question[0].answers[0].answer_num === 2) ? 'highlighted-answer' : 'answer-text'}>{props.question[0].answer_two_text}</li>
+        <li className={(props.question[0].answers[0].answer_num === 3) ? 'highlighted-answer' : 'answer-text'}>{props.question[0].answer_three_text}</li>
+        <li className={(props.question[0].answers[0].answer_num === 4) ? 'highlighted-answer' : 'answer-text'}>{props.question[0].answer_four_text}</li>
       </ul>
     </div>
   );

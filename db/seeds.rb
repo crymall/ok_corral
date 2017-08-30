@@ -79,9 +79,6 @@ Answer.destroy_all
 Answer.create(answer_num: 2, accepted_answers: '123', importance: 2,
               question_id: Question.find_by(question_text: 'Hey, whats going on?').id,
               user_id: User.find_by(username: 'sampleuser').id)
-Answer.create(answer_num: 3, accepted_answers: '34', importance: 1,
-              question_id: Question.find_by(question_text: 'Whats your fave color?').id,
-              user_id: User.find_by(username: 'sampleuser').id)
 Answer.create(answer_num: 2, accepted_answers: '2', importance: 3,
               question_id: Question.find_by(question_text: 'True or false?').id,
               user_id: User.find_by(username: 'sampleuser').id)
@@ -115,3 +112,13 @@ Answer.create(answer_num: 2, accepted_answers: '134', importance: 3,
 Answer.create(answer_num: 1, accepted_answers: '1', importance: 1,
               question_id: Question.find_by(question_text: 'True or false?').id,
               user_id: User.find_by(username: 'cal4miteej').id)
+
+Answer.create(answer_num: 2, accepted_answers: '234', importance: 1,
+              question_id: Question.find_by(question_text: 'Hey, whats going on?').id,
+              user_id: User.find_by(username: 'virgille').id)
+Answer.create(answer_num: 2, accepted_answers: '134', importance: 3,
+              question_id: Question.find_by(question_text: 'Whats your fave color?').id,
+              user_id: User.find_by(username: 'virgille').id)
+Answer.create(answer_num: 1, accepted_answers: '2', importance: 1,
+              question_id: Question.find_by(question_text: 'True or false?').id,
+              user_id: User.find_by(username: 'virgille').id)

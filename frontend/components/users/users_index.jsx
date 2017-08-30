@@ -136,7 +136,7 @@ class UsersIndex extends React.Component {
 
       return (Math.round(myMatch + theirMatch));
     } else {
-      return 'N/A';
+      return 0;
     }
   }
 
@@ -146,7 +146,9 @@ class UsersIndex extends React.Component {
     if (this.props.users) {
       let users = this.props.users
         .map((user, idx) => {return <UserItem className='user-item' user={user} match={this.matchPercentage(user)} key={user.id}/>})
-      debugger
+
+      users = users.sort((a, b) => {return (b.props.match - a.props.match)})
+
       return (
         <div className='search-index'>
           <div className='users-search'>
@@ -161,7 +163,7 @@ class UsersIndex extends React.Component {
                 <label className='search-item'>
                   Ages
                   <div className='inputs'>
-                    <input name='user' className='age-input' placeholder='min' onChange={this.handleInput('age_min')} value={this.state.user.age_min}></input> —
+                    <input name='user' className='age-input' placeholder='min' onChange={this.handleInput('age_min')} value={this.state.user.age_min}></input> <div className='to'>to</div>
                     <input name='user' className='age-input' placeholder='max' onChange={this.handleInput('age_max')} value={this.state.user.age_max}></input>
                   </div>
                 </label>

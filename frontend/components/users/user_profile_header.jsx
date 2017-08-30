@@ -44,6 +44,7 @@ class UserProfileHeader extends React.Component {
             <div className='profile-header'>
               <div className='profile-header-items'>
                 <img
+                  className='currentuser-image'
                   src={this.props.currentUser.image_url ?
                     `${this.state.user.image_url || this.props.currentUser.image_url}`
                     : 'http://res.cloudinary.com/reeedo/image/upload/v1503892978/ic_account_circle_ifhpuy.png'}

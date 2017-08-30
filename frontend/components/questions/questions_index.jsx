@@ -21,7 +21,11 @@ class QuestionsIndex extends React.Component {
     if ((this.props.answers.length > 0) && (this.props.answeredQuestions.length > 0)) {
       let pairs = {};
       this.props.answeredQuestions.forEach((question) => pairs[question.id] = [question]);
-      this.props.answers.forEach((answer) => pairs[answer.question_id].concat(answer));
+      this.props.answers.forEach((answer) => {
+        if (answer.user_id === this.props.match.params.user_id){
+          pairs[answer.question_id].concat(answer);
+        }
+      });
       answerItems = Object.keys(pairs).map((item) => {
           return <AnswerItem className='answer-item-container' question={pairs[item]} key={item} />
         });

@@ -1,6 +1,7 @@
 body {
   margin: 0px;
-  background-color: #f2f2f2
+  background-color: #f2f2f2;
+  margin-bottom: 60px;
 }
 
 h1 {
@@ -89,6 +90,7 @@ select {
   background-size: 15px 15px;
   background-repeat: no-repeat;
   text-indent: 20px;
+  cursor: pointer;
 }
 
 select:focus {
@@ -105,10 +107,15 @@ button {
   background-color: #552f5b;
   color: white;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 button:focus {
   outline: none;
+}
+
+.signup-button:hover, .textbutton:hover, .modalbutton:hover {
+  background-color: #b263bf
 }
 
 .reg-text-form {
@@ -169,6 +176,11 @@ input:focus {
   background-color: transparent;
   color: white;
   margin-top: 5px;
+  cursor: pointer;
+}
+
+.signin-button:hover {
+  background-color: #ffd599;
 }
 
 .modal {
@@ -217,6 +229,7 @@ input:focus {
   display: flex;
   justify-content: center;
   width: 180px;
+  cursor: pointer;
 }
 
 .modalinput {

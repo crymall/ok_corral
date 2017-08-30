@@ -31,16 +31,16 @@
   width: 250px;
   height: 250px;
   margin: 0px;
-  margin-bottom: 32px;
+  margin-bottom: 25px;
 }
 
-.user-item-image:hover {
+.user-item:hover > .user-item-image {
   width: 260px;
   height: 260px;
 }
 
 .user-item-text {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 a:-webkit-any-link {
@@ -63,6 +63,18 @@ a:-moz-any-link {
   color: #afafaf;
   text-decoration: none;
   font-size: 16px;
+}
+
+.user-item:hover > .user-item-text > .user-item-age {
+  color: grey;
+  font-size: 20px;
+}
+
+.user-item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .search-index {
@@ -138,10 +150,6 @@ input[type=range] {
   background: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
 input[type=range]::-ms-track {
   width: 100%;
   cursor: pointer;
@@ -161,6 +169,12 @@ input[type=range]::-webkit-slider-thumb {
   background-position: 50% 52%;
   cursor: pointer;
   margin-top: -14px;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  height: 45px;
+  width: 45px;
+  margin-top: -16px;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -222,10 +236,25 @@ a {
 .age-link, .dist-link {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+.age-link:hover, .dist-link:hover {
+  color: white;
 }
 
 .hidden {
   display: none;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+}
+
+.to {
+  font-weight: normal;
+  margin-right: 3px;
+  margin-left: 3px;
 }

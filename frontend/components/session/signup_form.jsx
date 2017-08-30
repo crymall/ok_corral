@@ -100,7 +100,7 @@ class SignupForm extends React.Component {
             <option value='man'>Man</option>
             <option value='more'>Nonbinary</option>
           </select>
-          <button type='submit' value='submit'>Continue</button>
+          <button className='signup-button' type='submit' value='submit'>Continue</button>
         </form>
     );
 
