@@ -15,6 +15,15 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: "Answer"
 
+  has_many :threads,
+    through: :messages,
+    source: :thread
+
+  has_many :messages,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: "Message"
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)
