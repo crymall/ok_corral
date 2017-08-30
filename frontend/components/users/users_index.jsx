@@ -16,7 +16,8 @@ class UsersIndex extends React.Component {
         distance: 10
       },
       ageIsOpen: false,
-      distanceIsOpen: false
+      distanceIsOpen: false,
+      loading: false
     }
 
     this.matches = this.matches.bind(this);
@@ -53,7 +54,7 @@ class UsersIndex extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.sameState(prevState) === false) {
-      this.matches();
+      setTimeout(() => this.matches(), 700);
     }
   }
 
@@ -143,60 +144,64 @@ class UsersIndex extends React.Component {
 
 
   render() {
-    if (this.props.users) {
-      let users = this.props.users
-        .map((user, idx) => {return <UserItem className='user-item' user={user} match={this.matchPercentage(user)} key={user.id}/>})
+    if (!this.state.loading) {
+      if (this.props.users) {
+        let users = this.props.users
+          .map((user, idx) => {return <UserItem className='user-item' user={user} match={this.matchPercentage(user)} key={user.id}/>})
 
-      users = users.sort((a, b) => {return (b.props.match - a.props.match)})
+        users = users.sort((a, b) => {return (b.props.match - a.props.match)})
 
-      return (
-        <div className='search-index'>
-          <div className='users-search'>
-            <p className='search-text'>
-              Showing users ages
-            </p>
+        return (
+          <div className='search-index'>
+            <div className='users-search'>
+              <p className='search-text'>
+                Showing users ages
+              </p>
 
-            <div>
-              <a className='age-link' onClick={this.toggleAgesForm}>{this.state.user.age_min} to {this.state.user.age_max}</a>
+              <div>
+                <a className='age-link' onClick={this.toggleAgesForm}>{this.state.user.age_min} to {this.state.user.age_max}</a>
 
-              <form className={(this.state.ageIsOpen) ? 'age-search-form' : 'hidden'}>
-                <label className='search-item'>
-                  Ages
-                  <div className='inputs'>
-                    <input name='user' className='age-input' placeholder='min' onChange={this.handleInput('age_min')} value={this.state.user.age_min}></input> <div className='to'>to</div>
-                    <input name='user' className='age-input' placeholder='max' onChange={this.handleInput('age_max')} value={this.state.user.age_max}></input>
-                  </div>
-                </label>
-              </form>
+                <form className={(this.state.ageIsOpen) ? 'age-search-form' : 'hidden'}>
+                  <label className='search-item'>
+                    Ages
+                    <div className='inputs'>
+                      <input name='user' className='age-input' placeholder='min' onChange={this.handleInput('age_min')} value={this.state.user.age_min}></input> <div className='to'>to</div>
+                      <input name='user' className='age-input' placeholder='max' onChange={this.handleInput('age_max')} value={this.state.user.age_max}></input>
+                    </div>
+                  </label>
+                </form>
+              </div>
+
+              <p className='search-text'>
+                within
+              </p>
+
+              <div>
+                <a className='dist-link' onClick={this.toggleDistanceForm}>{this.state.user.distance} miles</a>
+
+                <form className={(this.state.distanceIsOpen) ? 'dist-search-form' : 'hidden'}>
+                  <label className='search-item'>
+                    Distance
+                    <input className='dist-input' name='user' type='range' name='distance' onChange={this.handleInput('distance')} min='5' max='50' value={this.state.user.distance}></input>
+                  </label>
+                </form>
+              </div>
+              <p className='search-text'>
+                of your location
+              </p>
             </div>
 
-            <p className='search-text'>
-              within
-            </p>
-
-            <div>
-              <a className='dist-link' onClick={this.toggleDistanceForm}>{this.state.user.distance} miles</a>
-
-              <form className={(this.state.distanceIsOpen) ? 'dist-search-form' : 'hidden'}>
-                <label className='search-item'>
-                  Distance
-                  <input className='dist-input' name='user' type='range' name='distance' onChange={this.handleInput('distance')} min='5' max='50' value={this.state.user.distance}></input>
-                </label>
-              </form>
+            <div className='users-index' onClick={this.closeForms}>
+              <div className='user-items'>
+                {users}
+              </div>
             </div>
-            <p className='search-text'>
-              of your location
-            </p>
+
           </div>
-
-          <div className='users-index' onClick={this.closeForms}>
-            <div className='user-items'>
-              {users}
-            </div>
-          </div>
-
-        </div>
-      );
+        );
+      } else {
+        return null;
+      }
     } else {
       return null;
     }
