@@ -6,6 +6,9 @@ class QuestionsIndex extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      user: ''
+    }
   }
 
   componentDidMount() {
@@ -17,18 +20,22 @@ class QuestionsIndex extends React.Component {
   render() {
     let answerItems;
     let unansweredItems;
+    let user = parseInt(this.props.match.params.user_id)
 
-    if ((this.props.answers.length > 0) && (this.props.answeredQuestions.length > 0)) {
+    if ((this.props.answers.length > 0) && (this.props.answers[0].user_id === user) && (this.props.answeredQuestions.length > 0)) {
       let pairs = {};
+
       this.props.answeredQuestions.forEach((question) => pairs[question.id] = [question]);
       this.props.answers.forEach((answer) => {
-        if (answer.user_id === this.props.match.params.user_id){
-          pairs[answer.question_id].concat(answer);
+        if (answer.user_id === user){
+          pairs[answer.question_id].push(answer);
         }
       });
+
       answerItems = Object.keys(pairs).map((item) => {
           return <AnswerItem className='answer-item-container' question={pairs[item]} key={item} />
         });
+
     } else {
       answerItems = null;
     }
