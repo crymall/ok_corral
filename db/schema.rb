@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828193228) do
+ActiveRecord::Schema.define(version: 20170830204837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20170828193228) do
     t.index ["user_id", "question_id"], name: "index_answers_on_user_id_and_question_id", unique: true, using: :btree
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "thread_id",  null: false
+    t.text     "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string   "question_text",     null: false
     t.string   "answer_one_text",   null: false
@@ -34,6 +42,14 @@ ActiveRecord::Schema.define(version: 20170828193228) do
     t.string   "answer_four_text"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "threads", force: :cascade do |t|
+    t.integer  "user_one_id", null: false
+    t.integer  "user_two_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_one_id", "user_two_id"], name: "index_threads_on_user_one_id_and_user_two_id", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|

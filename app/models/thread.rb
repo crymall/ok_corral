@@ -1,0 +1,3 @@
+class Thread < ApplicationRecord
+
+end
