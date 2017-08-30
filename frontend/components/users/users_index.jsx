@@ -180,7 +180,7 @@ class UsersIndex extends React.Component {
                 <a className='dist-link' onClick={this.toggleDistanceForm}>{this.state.user.distance} miles</a>
 
                 <form className={(this.state.distanceIsOpen) ? 'dist-search-form' : 'hidden'}>
-                  <label className='search-item'>
+                  <label className='dist-search-item'>
                     Distance
                     <input className='dist-input' name='user' type='range' name='distance' onChange={this.handleInput('distance')} min='5' max='50' value={this.state.user.distance}></input>
                   </label>
