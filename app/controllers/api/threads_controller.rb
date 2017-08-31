@@ -2,7 +2,7 @@ class Api::ThreadsController < ApplicationController
 
   def index
     @threads = (Thread.where(user_one_id: params[:user][:id]) ||
-                Thread.where(user_two_id: params[:user][:id])
+                Thread.where(user_two_id: params[:user][:id]))
 
     render :index
   end
