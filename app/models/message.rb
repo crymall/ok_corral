@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  validates :user, :thread, :body presence: true
+  validates :user, :thread, :body, presence: true
 
   belongs_to :user,
     primary_key: :id,
@@ -10,5 +10,5 @@ class Message < ApplicationRecord
     primary_key: :id,
     foreign_key: :thread_id,
     class_name: "Thread"
-    
+
 end
