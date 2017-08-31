@@ -36,14 +36,30 @@ class UserProfileHeader extends React.Component {
   }
 
   render() {
+    let backArrow;
+
     if (!this.props.user && !this.props.currentUser) {
       return <div></div>;
     } else {
+
+      if (this.props.location.pathname.split('/').includes('messages') ||
+          this.props.location.pathname.split('/').includes('questions')) {
+
+          backArrow = (
+            <Link to={`/users/${this.props.currentUser.id}`}>
+              <button className='back-button'></button>
+            </Link>
+          );
+      } else {
+          backArrow = null;
+      }
+
       if (!this.props.user) {
         return (
           <div>
             <div className='profile-header'>
               <div className='profile-header-items'>
+                { backArrow }
                 <img
                   className='currentuser-image'
                   src={this.props.currentUser.image_url ?
@@ -66,11 +82,13 @@ class UserProfileHeader extends React.Component {
           <div>
             <div className='profile-header'>
               <div className='profile-header-items'>
-                <img
+                <Link to={`/users/${this.props.user.id}`}>
+                  <img
                   src={this.props.user.image_url ?
                     `${this.props.user.image_url}`
                     : 'http://res.cloudinary.com/reeedo/image/upload/v1503892978/ic_account_circle_ifhpuy.png'}
-                />
+                  />
+                </Link>
                 <div className='profile-header-text'>
                   <h1>{this.props.user.username}</h1>
                   <h3>{this.props.user.age}</h3>

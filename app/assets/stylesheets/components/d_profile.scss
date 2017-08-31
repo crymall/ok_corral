@@ -36,6 +36,23 @@ h3 {
   max-width: 700px;
 }
 
+.back-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-image: image-url('back.png');
+  background-repeat: no-repeat;
+  background-size: 72%;
+  background-position: 50% 50%;
+  margin-right: 15px;
+  margin-top: 130px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-image: image-url('back-hover.png');
+}
+
 .profile-header-text {
   display: flex;
   flex-direction: column;
@@ -61,7 +78,6 @@ img {
 
 .profile-body {
   display: flex;
-  justify-content: center;
   margin-top: 60px;
   margin-right: 17%;
   width: 70%;

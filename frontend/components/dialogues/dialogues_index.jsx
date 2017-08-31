@@ -31,7 +31,7 @@ class DialoguesIndex extends React.Component {
       <div>
         <div className='dialogues-index-container'>
         <div className='dialogues-index'>
-          <h2>Messages</h2>
+          <h2 className='message-header-text'>Messages</h2>
           { dialogueList }
         </div>
         </div>
