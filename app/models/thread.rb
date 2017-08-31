@@ -1,5 +1,6 @@
 class Thread < ApplicationRecord
-  validates :user_one, :user_two, presence: true;
+
+  validates :user_one, :user_two, presence: true
 
   belongs_to :user_one,
     primary_key: :id,
@@ -15,5 +16,5 @@ class Thread < ApplicationRecord
     primary_key: :id,
     foreign_key: :thread_id,
     class_name: "Message"
-    
+
 end
