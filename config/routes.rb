@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :questions, only: [:index, :show]
     resources :answers, only: [:create, :index, :show, :update]
-    resources :threads, only: [:create, :index, :show]
+    resources :dialogues, only: [:create, :index, :show]
     resources :messages, only: [:create, :index, :show]
   end
 

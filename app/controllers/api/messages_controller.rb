@@ -1,7 +1,7 @@
 class Api::MessagesController < ApplicationController
 
   def index
-    @messages = Message.where(thread_id: params[:thread][:id])
+    @messages = Message.where(dialogue_id: params[:dialogue][:id])
     render :index
   end
 
@@ -23,7 +23,7 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:user_id, :thread_id, :body)
+    params.require(:message).permit(:user_id, :dialogue_id, :body)
   end
 
 end

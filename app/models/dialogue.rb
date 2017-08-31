@@ -1,4 +1,4 @@
-class Thread < ApplicationRecord
+class Dialogue < ApplicationRecord
 
   validates :user_one, :user_two, presence: true
 
@@ -14,7 +14,7 @@ class Thread < ApplicationRecord
 
   has_many :messages,
     primary_key: :id,
-    foreign_key: :thread_id,
+    foreign_key: :dialogue_id,
     class_name: "Message"
 
 end

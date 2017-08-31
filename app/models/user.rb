@@ -15,9 +15,9 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: "Answer"
 
-  has_many :threads,
+  has_many :dialogues,
     through: :messages,
-    source: :thread
+    source: :dialogue
 
   has_many :messages,
     primary_key: :id,
