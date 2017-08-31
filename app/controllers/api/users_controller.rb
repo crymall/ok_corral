@@ -11,15 +11,19 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    min_age = params[:user][:age_min].to_i
-    max_age = params[:user][:age_max].to_i
-    distance = params[:user][:distance].to_i
-
-    if current_user.preference == "all"
+    if (!params[:user])
+      @users = User.where("id != '#{current_user.id}'")
+    elsif current_user.preference == "all"
+      min_age = params[:user][:age_min].to_i
+      max_age = params[:user][:age_max].to_i
+      distance = params[:user][:distance].to_i
       @users = User.where("id != '#{current_user.id}'")
         .where("age >= '#{min_age}' and age <= '#{max_age}'")
         .within(distance, :origin => current_user)
     else
+      min_age = params[:user][:age_min].to_i
+      max_age = params[:user][:age_max].to_i
+      distance = params[:user][:distance].to_i
       @users = User.where("id != '#{current_user.id}'")
         .where("age >= '#{min_age}' and age <= '#{max_age}'")
         .where("gender = '#{current_user.preference}'")

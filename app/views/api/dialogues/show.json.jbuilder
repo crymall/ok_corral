@@ -1,1 +1,1 @@
-json.partial! 'api/dialogues/dialogue', dialogue: dialogue
+json.partial! 'api/dialogues/dialogue', dialogue: @dialogue

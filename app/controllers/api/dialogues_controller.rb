@@ -1,7 +1,7 @@
 class Api::DialoguesController < ApplicationController
 
   def index
-    @dialogue = (Dialogue.where(user_one_id: params[:user][:id]) ||
+    @dialogues = (Dialogue.where(user_one_id: params[:user][:id]) ||
                 Dialogue.where(user_two_id: params[:user][:id]))
 
     render :index

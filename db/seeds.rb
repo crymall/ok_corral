@@ -122,3 +122,23 @@ Answer.create(answer_num: 2, accepted_answers: '134', importance: 3,
 Answer.create(answer_num: 1, accepted_answers: '2', importance: 1,
               question_id: Question.find_by(question_text: 'True or false?').id,
               user_id: User.find_by(username: 'virgille').id)
+
+Dialogue.destroy_all
+Dialogue.create(user_one_id: User.find_by(username: 'sampleuser').id,
+                user_two_id: User.find_by(username: 'holliday').id)
+Dialogue.create(user_one_id: User.find_by(username: 'sampleuser').id,
+                user_two_id: User.find_by(username: 'Ikey').id)
+Dialogue.create(user_one_id: User.find_by(username: 'sampleuser').id,
+                user_two_id: User.find_by(username: 'cal4miteej').id)
+
+Message.destroy_all
+Message.create(user_id: User.find_by(username: 'sampleuser').id,
+              dialogue_id: Dialogue.find_by(
+                user_one_id: User.find_by(username: 'sampleuser').id,
+                user_two_id: User.find_by(username: 'holliday').id
+              ).id, body: 'hey')
+Message.create(user_id: User.find_by(username: 'holliday').id,
+              dialogue_id: Dialogue.find_by(
+                user_one_id: User.find_by(username: 'sampleuser').id,
+                user_two_id: User.find_by(username: 'holliday').id
+              ).id, body: 'whats up')

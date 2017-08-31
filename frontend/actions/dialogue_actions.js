@@ -31,16 +31,9 @@ export const fetchSingleDialogue = (params) => (dispatch) => {
     });
 }
 
-export const editSingleDialogue = (params) => (dispatch) => {
-  return APIUtil.updateSingleDialogue(params)
+export const createDialogue = (dialogue) => (dispatch) => {
+  return APIUtil.createDialogue(dialogue)
     .then((dialogue) => {
       dispatch(receiveSingleDialogue(dialogue));
-    });
-}
-
-export const createAnswer = (answer) => (dispatch) => {
-  return APIUtil.createAnswer(answer)
-    .then((answer) => {
-      dispatch(receiveSingleAnswer(answer));
     });
 }

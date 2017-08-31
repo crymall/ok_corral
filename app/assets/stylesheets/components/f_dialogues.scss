@@ -1,0 +1,126 @@
+.dialogues-index-container {
+  display: flex;
+  justify-content: center
+}
+
+.dialogues-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 60px;
+  margin-right: 17%;
+  width: 70%;
+  max-width: 700px;
+}
+
+.dialogue-item {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid rgba(178, 99, 191, 0.1);
+  box-shadow: 3px 3px 10px lightgrey;
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px;
+  margin-right: 30px;
+}
+
+.dialogue-item:hover {
+  background-color: #ffd599;
+}
+
+.dialogue-username {
+  color: black;
+  margin: 0;
+  margin-left: 25px;
+}
+
+.message-snippet {
+  color: lightgrey;
+  margin-left: 25px;
+}
+
+.message-item {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 10px;
+  margin-right: 30px;
+}
+
+.cu-message-item {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  margin-top: 10px;
+  padding: 10px;
+  margin-left: 30px;
+}
+
+.message-body {
+  display: flex;
+  width: 90%;
+  border: 1px solid rgba(178, 99, 191, 0.1);
+  box-shadow: 3px 3px 10px lightgrey;
+  background-color: white;
+  min-height: 80px;
+}
+
+.message-text {
+  margin-top: 17px;
+  margin-left: 25px;
+  font-size: 16px;
+}
+
+.cu-stuff {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.user-stuff {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.message-profile-image {
+  height: 50px;
+  width: 50px;
+  margin: 0;
+}
+
+.message-username {
+  color: black;
+}
+
+.message-form-container {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.message-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.message-input-text {
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  height: 100px;
+  width: 100%;
+}
