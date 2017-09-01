@@ -1,8 +1,8 @@
 import React from 'react';
-import onClickOutside from 'react-onclickoutside'
 import { UserItem } from './user_item';
 import merge from 'lodash/merge';
 import keys from 'lodash/keys';
+import DotLoader from 'halogen/DotLoader';
 
 class UsersIndex extends React.Component {
 
@@ -17,7 +17,7 @@ class UsersIndex extends React.Component {
       },
       ageIsOpen: false,
       distanceIsOpen: false,
-      loading: false
+      loading: true
     }
 
     this.matches = this.matches.bind(this);
@@ -26,6 +26,7 @@ class UsersIndex extends React.Component {
     this.toggleAgesForm = this.toggleAgesForm.bind(this);
     this.toggleDistanceForm = this.toggleDistanceForm.bind(this);
     this.closeForms = this.closeForms.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.answersInCommon = this.answersInCommon.bind(this);
     this.matchPercentage = this.matchPercentage.bind(this);
   }
@@ -49,6 +50,7 @@ class UsersIndex extends React.Component {
   }
 
   componentDidMount() {
+    setTimeout(() => this.setState({loading: false}), 500);
     this.matches();
   }
 
@@ -60,7 +62,6 @@ class UsersIndex extends React.Component {
 
   handleInput(type) {
     const old_state = this.state;
-
     return e => this.setState(
       merge({}, old_state, {user: {[type]: e.currentTarget.value}})
     );
@@ -96,9 +97,8 @@ class UsersIndex extends React.Component {
     }
   }
 
-  handleClickOutside() {
-    this.setState({ageIsOpen: false});
-    this.setState({distanceIsOpen: false});
+  handleClick(e) {
+    e.stopPropagation();
   }
 
   //MATCHING
@@ -153,7 +153,7 @@ class UsersIndex extends React.Component {
 
         return (
           <div className='search-index'>
-            <div className='users-search'>
+            <div className='users-search' onClick={this.closeForms}>
               <p className='search-text'>
                 Showing users ages
               </p>
@@ -161,7 +161,7 @@ class UsersIndex extends React.Component {
               <div>
                 <a className='age-link' onClick={this.toggleAgesForm}>{this.state.user.age_min} to {this.state.user.age_max}</a>
 
-                <form className={(this.state.ageIsOpen) ? 'age-search-form' : 'hidden'}>
+                <form onClick={this.handleClick} className={(this.state.ageIsOpen) ? 'age-search-form' : 'hidden'}>
                   <label className='search-item'>
                     Ages
                     <div className='inputs'>
@@ -179,7 +179,7 @@ class UsersIndex extends React.Component {
               <div>
                 <a className='dist-link' onClick={this.toggleDistanceForm}>{this.state.user.distance} miles</a>
 
-                <form className={(this.state.distanceIsOpen) ? 'dist-search-form' : 'hidden'}>
+                <form onClick={this.handleClick} className={(this.state.distanceIsOpen) ? 'dist-search-form' : 'hidden'}>
                   <label className='dist-search-item'>
                     Distance
                     <input className='dist-input' name='user' type='range' name='distance' onChange={this.handleInput('distance')} min='5' max='50' value={this.state.user.distance}></input>
@@ -203,9 +203,9 @@ class UsersIndex extends React.Component {
         return null;
       }
     } else {
-      return null;
+      return <DotLoader className='loader' color='#ff9f1c' size='30px' margin='4px'/>;
     }
   }
 }
 
-export default onClickOutside(UsersIndex);
+export default UsersIndex;
