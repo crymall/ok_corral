@@ -14,9 +14,9 @@ CSS hover interactions make the interface feel subtly bouncier. Mouse movement i
 
 All of the hallmark features of OKCupid are here—users can answer matching questions, filter matches based on distance and age, and view and message matches that interest them. It will be interesting to see how the perception of these features changes with my updated design language. Hopefully, OKCorral is light, fun, and satisfying to play with.
 
-![index](app/assets/images/index-screenshot.png)
-
 ## Index
+
+![index](app/assets/images/index-screenshot.png)
 
 On the Index page of the app, users can view potential matches based on their stated sexual preferences, location, and accepted ages. Matches are sorted based on match percentage. Match percentage is determined via a matching algorithm, which we'll be covering in the 'questions' section. All matching calculation is handled on the frontend—the backend stores questions and answers, but doesn't calculate matching scores.
 
@@ -52,10 +52,9 @@ return (Math.round(myMatch + theirMatch));
 
 ```
 
+## Dialogues and Messages
 
 ![messages](app/assets/images/messages-screenshot.png)
-
-## Dialogues and Messages
 
 On the Message Index, users can view all of their dialogues with potential matches. Clicking will take them to their message history, shown above.
 
