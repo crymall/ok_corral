@@ -129,10 +129,15 @@ class UsersIndex extends React.Component {
       let numberInCommon = commonAnswers.length;
 
       commonAnswers.forEach((answerPair) => {
-        if (!answerPair[0].accepted_answers.includes(answerPair[1].answer_num.toString())) {
-          myMatch = (myMatch - (50/numberInCommon/answerPair[0].importance));
-        } else if (!answerPair[1].accepted_answers.includes(answerPair[0].answer_num.toString()))
-          theirMatch = (theirMatch - (50/numberInCommon/answerPair[1].importance));
+        if (!answerPair[0].accepted_answers.includes
+              (answerPair[1].answer_num.toString())) {
+                  myMatch = (myMatch - (50/numberInCommon/answerPair[0].importance)
+              );
+        } else if
+            (!answerPair[1].accepted_answers.includes
+              (answerPair[0].answer_num.toString()))
+                  theirMatch = (theirMatch - (50/numberInCommon/answerPair[1].importance)
+              );
       })
 
       return (Math.round(myMatch + theirMatch));
