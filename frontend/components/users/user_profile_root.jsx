@@ -4,10 +4,11 @@ import UserProfileContainer from './user_profile_container';
 import QuestionsIndexContainer from '../questions/questions_index_container';
 import DialoguesIndexContainer from '../dialogues/dialogues_index_container';
 import DialogueContainer from '../dialogues/dialogue_container';
+import { withRouter } from 'react-router';
 import { Route } from 'react-router-dom';
 import { AuthRoute } from '../../util/route_util';
 
-export const UserProfileRoot = () => {
+const UserProfileRoot = () => {
   return (
     <div>
       <Route path='/users/:user_id' component={ UserProfileHeaderContainer } />
@@ -18,3 +19,5 @@ export const UserProfileRoot = () => {
     </div>
   );
 }
+
+export default withRouter(UserProfileRoot);
