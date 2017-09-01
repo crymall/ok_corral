@@ -58,3 +58,12 @@ return (Math.round(myMatch + theirMatch));
 ## Dialogues and Messages
 
 On the Message Index, users can view all of their dialogues with potential matches. Clicking will take them to their message history, shown above.
+
+## Future Implementations
+
+* Unlimited scroll for messages, users index.
+* Notifications for new messages, other external interactions.
+* More gender/orientation options and a more detailed gender/orientation backend handling.
+* Message sorting and timestamp handling.
+* Detailed error handling for form inputs, esp. multi-page registration.
+* Ability to 'like' users.
