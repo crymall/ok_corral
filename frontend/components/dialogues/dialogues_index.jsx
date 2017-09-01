@@ -24,7 +24,7 @@ class DialoguesIndex extends React.Component {
         }
       });
     } else {
-      dialogueList = null;
+      dialogueList = [];
     }
 
     return (
@@ -32,7 +32,7 @@ class DialoguesIndex extends React.Component {
         <div className='dialogues-index-container'>
         <div className='dialogues-index'>
           <h2 className='message-header-text'>Messages</h2>
-          { dialogueList }
+          { dialogueList.reverse() }
         </div>
         </div>
       </div>
