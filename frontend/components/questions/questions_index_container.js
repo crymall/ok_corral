@@ -1,6 +1,7 @@
 import QuestionsIndex from './questions_index';
 import { connect } from 'react-redux';
 import { fetchAllQuestions, fetchSingleQuestion } from '../../actions/question_actions';
+import { withRouter } from 'react-router-dom';
 import { fetchAllAnswers, fetchSingleAnswer, updateSingleAnswer, createAnswer } from '../../actions/answer_actions';
 
 const mapStateToProps = (state) => {
@@ -35,7 +36,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(QuestionsIndex);
+)(QuestionsIndex));

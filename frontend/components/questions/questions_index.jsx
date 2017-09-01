@@ -15,7 +15,14 @@ class QuestionsIndex extends React.Component {
     const params = {user: {id: this.props.match.params.user_id}};
     this.props.fetchAllAnswers(params);
     this.props.fetchAllQuestions(params);
-    this.setState({user: this.props.match.params.user_id});
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.user_id !== nextProps.match.params.user_id) {
+      const params = {user: {id: nextProps.match.params.user_id}};
+      this.props.fetchAllAnswers(params);
+      this.setState({user: nextProps.match.params.user_id});
+    }
   }
 
   render() {
