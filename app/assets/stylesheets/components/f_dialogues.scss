@@ -22,6 +22,7 @@
   width: 100%;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid rgba(178, 99, 191, 0.1);
   box-shadow: 3px 3px 10px lightgrey;
   background-color: white;
@@ -30,8 +31,9 @@
   margin-right: 30px;
 }
 
-.dialogue-item:hover {
-  background-color: #ffd599;
+.dialogue-item:hover .message-profile-image {
+  height: 60px;
+  width: 60px;
 }
 
 .dialogue-username {
@@ -40,9 +42,18 @@
   margin-left: 25px;
 }
 
+.dialogue-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .message-snippet {
-  color: lightgrey;
-  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  color: grey;
+  font-style: italic;
+  margin-right: 5%;
 }
 
 .message-item {
