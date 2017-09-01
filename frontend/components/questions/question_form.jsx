@@ -167,7 +167,7 @@ class QuestionForm extends React.Component {
                 </label>
               </div>
               <div className='importance-option'>
-                <div
+                <div>
                   className={(this.state.answer.importance <= 1) ? 'checked' : 'unchecked'}
                   onClick={() => this.setState(merge({}, this.state, {answer: {importance: 1}}))}>
                 </div>

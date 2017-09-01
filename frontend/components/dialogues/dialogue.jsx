@@ -25,7 +25,7 @@ class Dialogue extends React.Component {
 
   render() {
     let messageList;
-
+    
     if (this.props.messages.length > 0) {
       messageList = this.props.messages.map((message) => {
         if (message.user_id === this.props.currentUser.id) {
@@ -51,7 +51,7 @@ class Dialogue extends React.Component {
           </div>
         </div>
       );
-    } else {
+    } else if (this.props.dialogue) {
       return (
         <div>
           <div className='dialogues-index-container'>
@@ -61,6 +61,8 @@ class Dialogue extends React.Component {
           </div>
         </div>
       );
+    } else {
+      return null;
     }
   }
 

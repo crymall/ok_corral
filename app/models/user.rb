@@ -15,16 +15,18 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: "Answer"
 
-  has_many :dialogues,
-    through: :messages,
-    source: :dialogue
-
   has_many :messages,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: "Message"
 
   attr_reader :password
+
+  def dialogues
+    Dialogue.where(user_one_id: self.id).or(
+      Dialogue.where(user_two_id: self.id)
+    )
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

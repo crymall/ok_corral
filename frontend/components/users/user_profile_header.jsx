@@ -13,6 +13,7 @@ class UserProfileHeader extends React.Component {
     }
 
     this.upload = this.upload.bind(this);
+    this.pressButton = this.pressButton.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +34,20 @@ class UserProfileHeader extends React.Component {
         }
       }
     );
+  }
+
+  pressButton() {
+    const thing = this.props.createDialogue({
+      dialogue: {
+        user_one_id: this.props.currentUser.id,
+        user_two_id: this.props.user.id
+      }
+    }).then(
+      ({ dialogue }) => (
+      this.props.history.push(
+        `/users/${this.props.user.id}/messages/${dialogue.id}`
+      )
+    ));
   }
 
   render() {
@@ -71,14 +86,23 @@ class UserProfileHeader extends React.Component {
                   <h1>{this.props.currentUser.username}</h1>
                   <h3>{this.props.currentUser.age}</h3>
                 </div>
-                <Link to={`/users/${this.props.currentUser.id}/questions`}><button className='question-index-button'>Questions</button></Link>
               </div>
             </div>
           </div>
         )
       }
       else {
-         return (
+        let messageButton = <button className='question-index-button' onClick={this.pressButton}>Message</button>;
+
+        this.props.user.dialogues.forEach((dialogue) => {
+          if (dialogue.user_one_id === this.props.currentUser.id || dialogue.user_two_id === this.props.currentUser.id) {
+            messageButton = (
+              <Link to={`/users/${this.props.user.id}/messages/${dialogue.id}`}><button className='question-index-button'>Messages</button></Link>
+            );
+          }
+        });
+
+        return (
           <div>
             <div className='profile-header'>
               <div className='profile-header-items'>
@@ -94,6 +118,7 @@ class UserProfileHeader extends React.Component {
                   <h3>{this.props.user.age}</h3>
                 </div>
                 <Link to={`/users/${this.props.user.id}/questions`}><button className='question-index-button'>Questions</button></Link>
+                { messageButton }
               </div>
             </div>
           </div>

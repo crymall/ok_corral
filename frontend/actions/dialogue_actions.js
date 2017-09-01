@@ -31,9 +31,5 @@ export const fetchSingleDialogue = (params) => (dispatch) => {
     });
 }
 
-export const createDialogue = (dialogue) => (dispatch) => {
-  return APIUtil.createDialogue(dialogue)
-    .then((dialogue) => {
-      dispatch(receiveSingleDialogue(dialogue));
-    });
-}
+export const createDialogue = (dialogue) => (dispatch) => APIUtil.createDialogue(dialogue)
+  .then( dialogue => dispatch(receiveSingleDialogue(dialogue)) );

@@ -32,8 +32,7 @@ h3 {
   display: flex;
   flex-direction: row;
   margin-right: 17%;
-  width: 70%;
-  max-width: 700px;
+  width: 700px;
 }
 
 .back-button {
@@ -56,6 +55,7 @@ h3 {
 .profile-header-text {
   display: flex;
   flex-direction: column;
+  margin-right: 10px;
 }
 
 img {
@@ -141,7 +141,7 @@ img {
   color: white;
   background-color: #b263bf;
   margin-top: 135px;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 .question-index-button:hover {

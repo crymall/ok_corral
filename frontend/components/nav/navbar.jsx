@@ -100,10 +100,22 @@ class Navbar extends React.Component {
               <Link to='/users/'><p className='left-menu-item'>Browse Matches</p></Link>
             </div>
             <div className='nav-buttons'>
-              <Link to={`/users/${this.props.currentUser.id}/messages`}><button className='messages-button'></button></Link>
-              <Link to={`/users/${this.props.currentUser.id}/questions`}><button className='questions-button'></button></Link>
-              <Link to={`/users/${this.props.currentUser.id}`}><button className='profile-button'></button></Link>
-              <button className='signout-button' onClick={this.handleSignout}></button>
+              <div className='tooltip'>
+                <Link to={`/users/${this.props.currentUser.id}/messages`}><button className='messages-button'></button></Link>
+                <span className='tooltiptext'><div className='message-tooltip'>Messages</div></span>
+              </div>
+              <div className='tooltip'>
+                <Link to={`/users/${this.props.currentUser.id}/questions`}><button className='questions-button'></button></Link>
+                <span className='tooltiptext'><div className='question-tooltip'>Questions</div></span>
+              </div>
+              <div className='tooltip'>
+                <Link to={`/users/${this.props.currentUser.id}`}><button className='profile-button'></button></Link>
+                <span className='tooltiptext'><div className='profile-tooltip'>Profile</div></span>
+              </div>
+              <div className='tooltip'>
+                <button className='signout-button' onClick={this.handleSignout}></button>
+                <span className='tooltiptext'><div className='logout-tooltip'>Log Out</div></span>
+              </div>
             </div>
           </div>
         </div>

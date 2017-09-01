@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors.responseJSON) {
+    if (this.props.errors && this.props.errors.length > 0) {
       return (
         <ul>
           {this.props.errors.responseJSON.map((error, idx) => {

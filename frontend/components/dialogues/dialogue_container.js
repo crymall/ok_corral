@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import Dialogue from './dialogue';
 import { fetchSingleDialogue } from '../../actions/dialogue_actions';
 import { fetchSingleUser } from '../../actions/user_actions';
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
   const dialogue = state.dialogues[ownProps.match.params.dialogue_id];
   const user = state.users[ownProps.match.params.user_id];
-  
+
   let arrayOfMessages;
   if (dialogue) {
     arrayOfMessages = Object.keys(dialogue.messages).map((id) => dialogue.messages[id]);
@@ -28,7 +29,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect (
+export default withRouter(connect (
   mapStateToProps,
   mapDispatchToProps
-)(Dialogue);
+)(Dialogue));
