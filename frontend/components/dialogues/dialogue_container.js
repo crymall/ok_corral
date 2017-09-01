@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import Dialogue from './dialogue';
 import { fetchSingleDialogue } from '../../actions/dialogue_actions';
 import { fetchSingleUser } from '../../actions/user_actions';
-import { withRouter } from 'react-router-dom'
+import { fetchAllMessages } from '../../actions/message_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   const dialogue = state.dialogues[ownProps.match.params.dialogue_id];
@@ -10,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
   let arrayOfMessages;
   if (dialogue) {
-    arrayOfMessages = Object.keys(dialogue.messages).map((id) => dialogue.messages[id]);
+    arrayOfMessages = Object.keys(state.messages).map((id) => state.messages[id]);
   } else {
     arrayOfMessages = [];
   }
@@ -25,7 +26,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchSingleDialogue: (params) => dispatch(fetchSingleDialogue(params)),
-    fetchSingleUser: (params) => dispatch(fetchSingleUser(params))
+    fetchSingleUser: (params) => dispatch(fetchSingleUser(params)),
+    fetchAllMessages: (params) => dispatch(fetchAllMessages(params))
   };
 };
 

@@ -23,6 +23,7 @@ class MessageForm extends React.Component {
     const message = {message: this.state};
     this.props.processForm(message);
     this.props.fetchSingleDialogue({id: parseInt(this.state.dialogue_id)});
+    this.setState({body: ''});
   }
 
   handleInput(type) {
@@ -34,7 +35,7 @@ class MessageForm extends React.Component {
       <div className='message-form-container'>
         <h2>New Message</h2>
         <form onSubmit={this.handleSubmit} className='message-form'>
-          <textarea name='message' onChange={this.handleInput('body')} className='message-input-text' rows='7'>
+          <textarea name='message' value={this.state.body} onChange={this.handleInput('body')} className='message-input-text' rows='7'>
 
           </textarea>
           <button type='submit' value='submit' className='question-submit-button'>Send</button>

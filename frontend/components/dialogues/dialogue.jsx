@@ -9,7 +9,8 @@ class Dialogue extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchSingleDialogue({id: this.props.match.params.dialogue_id})
+    this.props.fetchSingleDialogue({id: this.props.match.params.dialogue_id});
+    this.props.fetchAllMessages({dialogue: {id: this.props.dialogue.id}});
 
     let otherUserId;
 
@@ -19,13 +20,19 @@ class Dialogue extends React.Component {
       } else {
         otherUserId = this.props.dialogue.user_one_id;
       }
-      this.props.fetchSingleUser(otherUserId)
+      this.props.fetchSingleUser(otherUserId);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.messages.length !== nextProps.messages.length) {
+      this.props.fetchSingleDialogue({id: this.props.match.params.dialogue_id});
     }
   }
 
   render() {
     let messageList;
-    
+
     if (this.props.messages.length > 0) {
       messageList = this.props.messages.map((message) => {
         if (message.user_id === this.props.currentUser.id) {
@@ -36,7 +43,7 @@ class Dialogue extends React.Component {
         }
       });
     } else {
-      messageList = null;
+      messageList = [];
     }
 
     if (messageList) {

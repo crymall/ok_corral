@@ -26,6 +26,7 @@
 .question-form {
   display: flex;
   width: 100%;
+  min-width: 600px;
   flex-direction: column;
   border: 1px solid rgba(178, 99, 191, 0.1);
   box-shadow: 3px 3px 10px lightgrey;
@@ -60,6 +61,7 @@
   align-items: flex-end;
   flex-direction: row-reverse;
   margin-top: 10px;
+  width: 100%;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 16px;
