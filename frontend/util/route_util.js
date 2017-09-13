@@ -3,17 +3,26 @@ import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
 const Auth = ({ component: Component, path, loggedIn }) => (
-  <Route exact path={path} render={(props) => (
-    loggedIn ? (
-      <Route component={Component} {...props} />
-    ) : (
-      <Redirect to="/" />
-    )
-  )} />
+
+  <Route exact path={path} render={
+    (props) => (loggedIn ?
+               (<Route component={Component} {...props} />) :
+               (<Redirect to="/" />)
+             )
+           }
+  />
+
 );
 
 const mapStateToProps = state => (
-  {loggedIn: Boolean(state.session.currentUser)}
+
+  {
+    loggedIn: Boolean(state.session.currentUser)
+  }
+
 );
 
-export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
+export const AuthRoute = withRouter(
+                           connect(mapStateToProps, null)
+                           (Auth)
+                         );

@@ -6,13 +6,17 @@ import dialoguesReducer from './dialogues_reducer';
 import messagesReducer from './messages_reducer';
 import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({
-  session: sessionReducer,
-  users: usersReducer,
-  questions: questionsReducer,
-  answers: answersReducer,
-  dialogues: dialoguesReducer,
-  messages: messagesReducer
-});
+const rootReducer = combineReducers(
+
+  {
+    session: sessionReducer,
+    users: usersReducer,
+    questions: questionsReducer,
+    answers: answersReducer,
+    dialogues: dialoguesReducer,
+    messages: messagesReducer
+  }
+  
+);
 
 export default rootReducer;

@@ -11,7 +11,8 @@ export const DialogueIndexItem = (props) => {
   }
 
   if (messages && messages.length > 0) {
-    messageSnippet = messages[messages.length - 1].body.slice(0, 50).concat('...');
+    messageSnippet = messages[messages.length - 1].body
+                     .slice(0, 50).concat('...');
   }
 
   // ^ Create message preview (messageSnippet) for thread index ^
@@ -22,7 +23,8 @@ export const DialogueIndexItem = (props) => {
         <div className='dialogue-item'>
           <div className='dialogue-right'>
 
-            <img className='message-profile-image' src={props.user.image_url} />
+            <img className='message-profile-image'
+                 src={props.user.image_url} />
 
             <h3 className='dialogue-username'>
               {props.user.username}

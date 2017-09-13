@@ -7,15 +7,20 @@ import { fetchAllAnswers } from './actions/answer_actions';
 document.addEventListener('DOMContentLoaded', () => {
 
   let store;
-    if (window.currentUser) {
-      const preloadedState = { session: { currentUser: window.currentUser } };
-      store = configureStore(preloadedState);
 
-      delete window.currentUser;
+  if (window.currentUser) {
+    const preloadedState = { session: {
+                              currentUser: window.currentUser
+                             }
+                           };
 
-    } else {
-      store = configureStore();
-    }
+    store = configureStore(preloadedState);
+
+    delete window.currentUser;
+
+  } else {
+    store = configureStore();
+  }
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store } />, root);

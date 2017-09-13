@@ -6,49 +6,61 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 export const receiveCurrentUser = (user) => {
+
   return {
     type: RECEIVE_CURRENT_USER,
     user
-  };
-};
+  }
+
+}
 
 export const receiveErrors = (errors) => {
+
   return {
     type: RECEIVE_ERRORS,
     errors
-  };
-};
+  }
+
+}
 
 export const clearErrors = () => {
+
   return {
     type: CLEAR_ERRORS
-  };
-};
+  }
+
+}
 
 
 export const signUp = (user) => (dispatch) => {
+
   return APIUtil.signup(user)
-    .then((user) => {
-      dispatch(receiveCurrentUser(user));
-    }, (error) => {
-      dispatch(receiveErrors(error));
-    });
+                .then((user) => {
+                  dispatch(receiveCurrentUser(user));
+                }, (error) => {
+                  dispatch(receiveErrors(error));
+                });
+
 };
 
 export const signIn = (user) => (dispatch) => {
+
   return APIUtil.login(user)
-    .then((user) => {
-      dispatch(receiveCurrentUser(user));
-    }, (error) => {
-      dispatch(receiveErrors(error));
-    });
+                .then((user) => {
+                  dispatch(receiveCurrentUser(user));
+                }, (error) => {
+                  dispatch(receiveErrors(error));
+                });
+
 };
 
 export const signOut = () => (dispatch) => {
+
   return APIUtil.logout()
-    .then(() => {
-      dispatch(receiveCurrentUser(null));
-    }, (error) => {
-      dispatch(receiveErrors(error));
-    });
+                .then(() => {
+                  dispatch(receiveCurrentUser(null));
+                }, (error) => {
+                  dispatch(receiveErrors(error));
+                });
+                
 };

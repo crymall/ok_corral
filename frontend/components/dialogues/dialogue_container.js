@@ -6,13 +6,15 @@ import { fetchAllMessages } from '../../actions/message_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+
   const dialogue = state.dialogues[ownProps.match.params.dialogue_id];
   const user = state.users[parseInt(ownProps.match.params.user_id)];
 
   let arrayOfMessages;
 
   if (dialogue) {
-    arrayOfMessages = Object.keys(state.messages).map((id) => state.messages[id]);
+    arrayOfMessages = Object.keys(state.messages)
+                      .map((id) => state.messages[id]);
   } else {
     arrayOfMessages = [];
   }
