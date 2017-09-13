@@ -3,18 +3,23 @@ import { connect } from 'react-redux';
 import { fetchAllUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => {
-  const arrayOfUsers = Object.keys(state.users).map((id) => state.users[id]);
+
+  const arrayOfUsers = Object.keys(state.users)
+                             .map((id) => state.users[id]);
 
   return {
     users: arrayOfUsers,
     currentUser: state.session.currentUser
   };
+
 };
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     fetchAllUsers: (params) => dispatch(fetchAllUsers(params)),
   };
+  
 };
 
 export default connect(

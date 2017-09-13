@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 class SignupForm extends React.Component {
 
   constructor(props) {
+
     super(props);
 
     this.state = {
@@ -24,58 +25,86 @@ class SignupForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.incrementIndex = this.incrementIndex.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+
   }
 
   componentDidMount() {
+
     this.props.clearErrors();
+
   }
 
   componentWillReceiveProps(nextProps) {
+
     if (nextProps.signedIn) {
       this.props.history.push('/users');
     }
+
   }
 
   handleSubmit(e) {
+
     e.preventDefault();
+
     const user = this.state.user;
+
     this.props.processForm(user);
+
   }
 
   handleInput(type) {
+
     const old_state = this.state;
 
     return e => this.setState(
-      merge({}, old_state, {user: {[type]: e.currentTarget.value}}))
+      merge({}, old_state,
+            {
+              user: {
+                [type]: e.currentTarget.value
+              }
+            }
+      )
+    );
+
   }
 
   incrementIndex(e) {
+
     e.preventDefault();
 
     const old_state = this.state;
     const next_ind = this.state.ind + 1
 
     this.setState(
-      merge({}, old_state, {ind: next_ind})
+      merge({}, old_state,
+        {
+          ind: next_ind
+        }
+      )
     );
+
   }
 
   renderErrors() {
+
     if (this.props.errors && this.props.errors.length > 0) {
       return (
         <ul>
-          {this.props.errors.responseJSON.map((error, idx) => {
-            return (
-              <li key={`error-${idx}`}>
-                {error}
-              </li>
-            );
-          })}
+          {this.props.errors.responseJSON.map(
+            (error, idx) => {
+              return (
+                <li key={`error-${idx}`}>
+                  {error}
+                </li>
+              );
+            }
+          )}
         </ul>
       );
     } else {
       return null;
     }
+
   }
 
   render() {
@@ -83,33 +112,70 @@ class SignupForm extends React.Component {
     const page1 = (
         <form onSubmit={this.incrementIndex}>
           <p>
-          Welcome to the best meet n&#39; greet this side of the Mississippi.
-          We're pleased to meet you, and pleased to help you find your sweetheart.
+            Welcome to the best meet n&#39; greet this side of the Mississippi.
+            We're pleased to meet you, and pleased to help you find your sweetheart.
           </p>
 
-          <p>But first, let's get down to brass tacks.</p>
+          <p>
+            But first, let's get down to brass tacks.
+          </p>
 
-          <p>You are a...</p>
-          <select name='user' value={this.state.value} onChange={this.handleInput('orientation')}>
-            <option value='straight'>Straight</option>
-            <option value='gay'>Gay</option>
-            <option value='queer'>Bi/Queer</option>
+          <p>
+            You are a...
+          </p>
+
+          <select name='user'
+                  value={this.state.value}
+                  onChange={this.handleInput('orientation')}
+          >
+            <option value='straight'>
+              Straight
+            </option>
+            <option value='gay'>
+              Gay
+            </option>
+            <option value='queer'>
+              Bi/Queer
+            </option>
           </select>
-          <select name='user' value={this.state.value} onChange={this.handleInput('gender', this)}>
-            <option value='woman'>Woman</option>
-            <option value='man'>Man</option>
-            <option value='more'>Nonbinary</option>
+          <select name='user'
+                  value={this.state.value}
+                  onChange={this.handleInput('gender', this)}
+          >
+            <option value='woman'>
+              Woman
+            </option>
+            <option value='man'>
+              Man
+            </option>
+            <option value='more'>
+              Nonbinary
+            </option>
           </select>
-          <button className='signup-button' type='submit' value='submit'>Continue</button>
+
+          <button className='signup-button'
+                  type='submit'
+                  value='submit'
+          >
+            Continue
+          </button>
         </form>
     );
 
     const page2 = (
       <form onSubmit={this.incrementIndex} className="reg-text-form">
         <div className='inputs'>
+
           <label>
-            <div className='labeltext'>Age</div>
-            <select className='ageselect' name='user' value={this.state.value} onChange={this.handleInput('age')}>
+
+            <div className='labeltext'>
+              Age
+            </div>
+            <select className='ageselect'
+                    name='user'
+                    value={this.state.value}
+                    onChange={this.handleInput('age')}
+            >
               <option value='18'>18</option>
               <option value='19'>19</option>
               <option value='20'>20</option>
@@ -194,33 +260,80 @@ class SignupForm extends React.Component {
               <option value='99'>99</option>
               <option value='100'>100</option>
             </select>
+
           </label>
           <label>
-            <div className='labeltext'>Zip Code</div>
-            <input type='text' name='user' onChange={this.handleInput('zip')} value={`${this.state.user.zip}`} />
+
+            <div className='labeltext'>
+              Zip Code
+            </div>
+            <input type='text'
+                   name='user'
+                   onChange={this.handleInput('zip')}
+                   value={`${this.state.user.zip}`}
+            />
+
           </label>
           <label>
-            <div className='labeltext'>Email Address</div>
-            <input type='text' name='user' onChange={this.handleInput('email')} value={`${this.state.user.email}`} />
+
+            <div className='labeltext'>
+              Email Address
+            </div>
+            <input type='text'
+                   name='user'
+                   onChange={this.handleInput('email')}
+                   value={`${this.state.user.email}`}
+            />
+
           </label>
+
         </div>
-        <button className='textbutton' type='submit' value='submit'>Next</button>
+        <button className='textbutton'
+                type='submit'
+                value='submit'
+        >
+          Next
+        </button>
       </form>
     );
 
     const page3 = (
       <form onSubmit={this.handleSubmit} className="reg-text-form">
         <div className='inputs'>
+
           <label>
-            <div className='labeltext'>Username</div>
-            <input type='text' name='user' onChange={this.handleInput('username')} value={`${this.state.user.username}`} />
+
+            <div className='labeltext'>
+              Username
+            </div>
+            <input type='text'
+                   name='user'
+                   onChange={this.handleInput('username')}
+                   value={`${this.state.user.username}`}
+            />
+
           </label>
           <label>
-            <div className='labeltext'>Password</div>
-            <input name='user' className='password-reg' type='password' onChange={this.handleInput('password')} value={`${this.state.user.password}`} />
+
+            <div className='labeltext'>
+              Password
+            </div>
+
+            <input name='user'
+                   className='password-reg'
+                   type='password'
+                   onChange={this.handleInput('password')}
+                   value={`${this.state.user.password}`}
+            />
+
           </label>
         </div>
-        <button className='textbutton' type='submit' value='submit'>Yeehaw!</button>
+        <button className='textbutton'
+                type='submit'
+                value='submit'
+        >
+          Yeehaw!
+        </button>
       </form>
     );
 
@@ -228,9 +341,13 @@ class SignupForm extends React.Component {
       return (
         <div className="homepage-reg">
           <div className="homepage-body">
+
             <h1 className='front-head'>HOWDY, PARTNER.</h1>
+
             { this.renderErrors() }
+
             { page1 }
+
           </div>
         </div>
       );
@@ -239,9 +356,13 @@ class SignupForm extends React.Component {
       return (
         <div className="homepage-reg">
           <div className="homepage-body">
+
             <h1 className='front-head'>ALMOST THERE...</h1>
+
             { this.renderErrors() }
+
             { page2 }
+
           </div>
         </div>
       );
@@ -250,13 +371,18 @@ class SignupForm extends React.Component {
       return (
         <div className="homepage-reg">
           <div className="homepage-body">
+
             <h1 className='front-head'>JUST ONE MORE.</h1>
+
             { this.renderErrors() }
+
             { page3 }
+
           </div>
         </div>
       );
     }
+    
   }
 
 }

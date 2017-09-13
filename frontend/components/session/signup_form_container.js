@@ -3,21 +3,21 @@ import SignupForm from './signup_form';
 import { signUp, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
+
   return {
     signedIn: Boolean(state.session.currentUser),
     errors: state.session.errors
   };
+
 };
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
-    processForm: (user) => {
-      dispatch(signUp(user));
-    },
-    clearErrors: () => {
-      dispatch(clearErrors());
-    }
+    processForm: (user) => dispatch(signUp(user)),
+    clearErrors: () => dispatch(clearErrors())
   };
+
 };
 
 export default connect(

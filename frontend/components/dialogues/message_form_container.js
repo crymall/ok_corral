@@ -15,10 +15,12 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     processForm: (message) => dispatch(createMessage(message)),
     fetchSingleDialogue: (dialogue) => dispatch(fetchSingleDialogue(dialogue))
   };
+  
 };
 
 export default connect(

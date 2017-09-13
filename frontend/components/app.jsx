@@ -7,12 +7,16 @@ import { Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
+
   <div>
+
     <NavbarContainer />
     <Route exact path='/' component={ SignupFormContainer } />
     <AuthRoute exact path='/users' component={ UsersIndexContainer } />
     <Route path='/users/:user_id' component={ UserProfileRoot } />
+
   </div>
+  
 );
 
 export default App;

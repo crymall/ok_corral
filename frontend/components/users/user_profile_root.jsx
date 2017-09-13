@@ -9,15 +9,19 @@ import { Route } from 'react-router-dom';
 import { AuthRoute } from '../../util/route_util';
 
 const UserProfileRoot = () => {
+
   return (
     <div>
+
       <Route path='/users/:user_id' component={ UserProfileHeaderContainer } />
       <AuthRoute exact path='/users/:user_id' component={ UserProfileContainer } />
       <AuthRoute path='/users/:user_id/questions' component={ QuestionsIndexContainer } />
       <AuthRoute path='/users/:user_id/messages' component={ DialoguesIndexContainer } />
       <AuthRoute path='/users/:user_id/messages/:dialogue_id' component={ DialogueContainer } />
+      
     </div>
   );
+
 }
 
 export default withRouter(UserProfileRoot);
