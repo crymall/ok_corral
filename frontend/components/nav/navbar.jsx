@@ -50,7 +50,10 @@ class Navbar extends React.Component {
     const old_state = this.state;
 
     return e => this.setState(
-      merge({}, old_state, {user: {[type]: e.currentTarget.value}})
+      merge({}, old_state, {user: {
+                                    [type]: e.currentTarget.value
+                                  }
+                            })
     );
 
   }
@@ -80,12 +83,14 @@ class Navbar extends React.Component {
 
   openModal() {
 
+    this.props.clearErrors();
     this.setState({modalIsOpen: true});
 
   }
 
   closeModal() {
 
+    this.props.clearErrors();
     this.setState({modalIsOpen: false});
 
   }
@@ -94,10 +99,10 @@ class Navbar extends React.Component {
 
   renderErrors() {
 
-    if (this.props.errors.responseJSON) {
+    if (this.props.errors) {
       return (
-        <ul>
-          {this.props.errors.responseJSON.map((error, idx) => {
+        <ul className="modal-error">
+          {this.props.errors.map((error, idx) => {
             return (
               <li key={`error-${idx}`}>
 
@@ -174,6 +179,8 @@ class Navbar extends React.Component {
         </div>
       )
     } else {
+      let errors = this.renderErrors();
+
       return (
         <div>
           <div id='auth-navbar'>
@@ -232,6 +239,9 @@ class Navbar extends React.Component {
                         onClick={this.handleGuest}>
                           Guest Login
                 </button>
+
+                {errors}
+
               </form>
 
             </div>

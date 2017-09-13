@@ -16,9 +16,8 @@ p, form, select {
 li {
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 600;
   list-style: none;
-  color: white;
 }
 
 .homepage-reg {
@@ -189,7 +188,7 @@ input:focus {
   left: 50%;
   margin-left: -150px;
   width: 320px;
-  height: 425px;
+  height: 435px;
   background-color: #f2f2f2;
   border-radius: 5px;
 }
@@ -213,6 +212,7 @@ input:focus {
   align-items: center;
   justify-content: center;
   padding: 40px;
+  padding-top: 35px;
 }
 
 .modal-content p {
@@ -255,4 +255,12 @@ input:focus {
   text-indent: 12px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+}
+
+.reg-errors {
+  font-size: 14px;
+}
+
+.reg-errors li {
+  color: white;
 }

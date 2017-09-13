@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
 
   return {
     signedIn: Boolean(state.session.currentUser),
-    errors: state.session.errors
+    errors: state.session.errors.responseJSON
   };
 
 };

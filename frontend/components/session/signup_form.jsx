@@ -87,10 +87,12 @@ class SignupForm extends React.Component {
 
   renderErrors() {
 
-    if (this.props.errors && this.props.errors.length > 0) {
+    if (this.props.errors &&
+        this.props.errors.length > 0 &&
+        this.props.errors[0] !== "Invalid Credentials") {
       return (
-        <ul>
-          {this.props.errors.responseJSON.map(
+        <ul className="reg-errors">
+          {this.props.errors.map(
             (error, idx) => {
               return (
                 <li key={`error-${idx}`}>
@@ -108,6 +110,8 @@ class SignupForm extends React.Component {
   }
 
   render() {
+
+    let errors = this.renderErrors();
 
     const page1 = (
         <form onSubmit={this.incrementIndex}>
@@ -344,8 +348,6 @@ class SignupForm extends React.Component {
 
             <h1 className='front-head'>HOWDY, PARTNER.</h1>
 
-            { this.renderErrors() }
-
             { page1 }
 
           </div>
@@ -358,8 +360,6 @@ class SignupForm extends React.Component {
           <div className="homepage-body">
 
             <h1 className='front-head'>ALMOST THERE...</h1>
-
-            { this.renderErrors() }
 
             { page2 }
 
@@ -374,15 +374,15 @@ class SignupForm extends React.Component {
 
             <h1 className='front-head'>JUST ONE MORE.</h1>
 
-            { this.renderErrors() }
-
             { page3 }
+
+            { errors }
 
           </div>
         </div>
       );
     }
-    
+
   }
 
 }
