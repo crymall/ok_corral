@@ -1,6 +1,8 @@
 # OKCorral
 
-[Demo](https://okcorral.herokuapp.com)
+[Demo](http://www.okcorral.pw/)
+
+To experience the demo site without registering an account, click "Sign In" in the upper-right. There should be an option to log in as a guest.
 
 ![signup](app/assets/images/signin-screenshot.png)
 
