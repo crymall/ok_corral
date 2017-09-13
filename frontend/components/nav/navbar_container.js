@@ -5,10 +5,10 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = (state) => {
 
+  let errors = null;
+
   if (state.session.errors) {
-    let errors = state.session.errors.responseJSON;
-  } else {
-    let errors = null;
+    errors = state.session.errors.responseJSON;
   }
 
   return {
