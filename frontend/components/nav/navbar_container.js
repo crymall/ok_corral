@@ -5,9 +5,15 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = (state) => {
 
+  if (state.session.errors) {
+    let errors = state.session.errors.responseJSON;
+  } else {
+    let errors = null;
+  }
+
   return {
     currentUser: state.session.currentUser,
-    errors: state.session.errors.responseJSON
+    errors: errors
   };
 
 };

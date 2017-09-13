@@ -4,9 +4,15 @@ import { signUp, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
 
+  if (state.session.errors) {
+    let errors = state.session.errors.responseJSON;
+  } else {
+    let errors = null;
+  }
+
   return {
     signedIn: Boolean(state.session.currentUser),
-    errors: state.session.errors.responseJSON
+    errors: errors
   };
 
 };
