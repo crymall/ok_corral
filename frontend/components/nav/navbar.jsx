@@ -91,7 +91,12 @@ class Navbar extends React.Component {
   closeModal() {
 
     this.props.clearErrors();
-    this.setState({modalIsOpen: false});
+    this.setState({user: {
+                          username: '',
+                          password: ''
+                        },
+                   modalIsOpen: false
+                  });
 
   }
 

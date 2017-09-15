@@ -35,6 +35,14 @@ class UsersIndex extends React.Component {
 
   matches() {
 
+    let old_state = this.state;
+
+    if (this.state.user.distance === "50") {
+      this.setState(
+        merge({}, old_state, {user: {distance: "5000"}})
+      )
+    }
+
     const params = {user: this.state.user};
 
     return this.props.fetchAllUsers(params);
@@ -297,7 +305,7 @@ class UsersIndex extends React.Component {
              />;
     }
   }
-  
+
 }
 
 export default UsersIndex;

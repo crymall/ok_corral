@@ -99,10 +99,10 @@ class UserProfileHeader extends React.Component {
 
                 <img
                   className='currentuser-image'
-                  src={this.props.currentUser.image_url ?
-                    `${this.state.user.image_url ||
-                      this.props.currentUser.image_url}`
-                    : {account_circle}}
+                  src={`${(this.props.currentUser.image_url) ?
+                        this.state.user.image_url ||
+                        this.props.currentUser.image_url :
+                        account_circle}`}
                   onClick={this.upload}
                 />
 

@@ -18,7 +18,7 @@ export const UserItem = (props) => {
           <p className='user-item-age'>
             {props.user.age} | {props.match}%
           </p>
-          
+
         </div>
       </div>
     </Link>
