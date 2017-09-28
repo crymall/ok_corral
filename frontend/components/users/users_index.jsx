@@ -14,7 +14,7 @@ class UsersIndex extends React.Component {
       user: {
         age_min: 18,
         age_max: 100,
-        distance: 10
+        distance: 5000
       },
       ageIsOpen: false,
       distanceIsOpen: false,
