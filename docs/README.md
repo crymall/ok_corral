@@ -17,17 +17,11 @@ By the end of the production period, this app will, at a minimum, satisfy the fo
 
 # Design Docs
 
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API Endpoints][endpoints]
-* [DB Schema][schema]
-* [Sample State][sample-state]
-
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
-[sample-state]: docs/sample-state.md
+* [View Wireframes](./wireframes)
+* [React Components][./components.md]
+* [API Endpoints][./endpoints.md]
+* [DB Schema][./schema.md]
+* [Sample State][./sample-state.md]
 
 # Implementation Timeline
 
